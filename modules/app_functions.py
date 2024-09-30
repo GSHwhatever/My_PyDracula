@@ -17,11 +17,11 @@
 # MAIN FILE
 # ///////////////////////////////////////////////////////////////
 from main import *
-from myfunction import *
 
 # WITH ACCESS TO MAIN WINDOW WIDGETS
 # ///////////////////////////////////////////////////////////////
 class AppFunctions(MainWindow):
+
     def setThemeHack(self):
         Settings.BTN_LEFT_BOX_COLOR = "background-color: #495474;"
         Settings.BTN_RIGHT_BOX_COLOR = "background-color: #495474;"
@@ -41,10 +41,21 @@ class AppFunctions(MainWindow):
         # self.ui.verticalScrollBar.setStyleSheet("background-color: #6272a4;")
         # self.ui.commandLinkButton.setStyleSheet("color: #ff79c6;")
     
-    def login(self):
+    def login(self, L):
         idcard = self.le_idcard_login.text()
         name = self.le_name_login.text()
-        l = Login()
-        user, origin = l.main(name=name, idcard=idcard)
+        user, origin = L.main(name=name, idcard=idcard)
         self.le_user_login.setText(user)
         self.le_origin_login.setText(origin)
+
+    def read_ini(self, L):
+        user, idcard = L.read_ini()
+        self.le_idcard_login.setText(idcard)
+        self.le_name_login.setText(user)
+    
+    def set_login(self, L):
+        idcard = self.le_idcard_set.text()
+        name = self.le_name_set.text()
+        L.set_ini({"username": name, "password": idcard})
+
+

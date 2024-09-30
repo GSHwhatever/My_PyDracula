@@ -1,6 +1,6 @@
-# -*- coding:gbk -*-
+# -*- coding:utf8 -*-
 """
-½ğ±£µÇÂ¼½Ó¿Ú
+é‡‘ä¿ç™»å½•æ¥å£
 """
 from requests.exceptions import RequestException, ConnectionError, Timeout, TooManyRedirects
 import requests, time, os, configparser
@@ -75,23 +75,23 @@ class Login:
         dic = self.auth(name=name, idcard=idcard)
         if dic:
             r = self.login(dic)
-            if r and r.get('msg')  == "µÇÂ½³É¹¦":
+            if r and r.get('msg')  == "ç™»é™†æˆåŠŸ":
                 token = r.get('map').get('Access-Token')
                 self.config.set('Token', 'Acces_Token', token)
                 with open(self.path, 'w') as configfile:
                     self.config.write(configfile)
                 self.headers.update({'Access-Token': token})
                 name = name if name else self.config.get('Info', 'name')
-                # print(f'{name}µÇÂ¼³É¹¦')
+                # print(f'{name}ç™»å½•æˆåŠŸ')
                 origin = self.get_origin()
                 user = self.query_user()
                 return user, origin
             else:
-                print('µÇÂ¼Ê§°Ü')
+                print('ç™»å½•å¤±è´¥')
                 print(dic)
                 print(f'r:{r}')
         else:
-            print("µÇÂ¼Ê§°Ü")
+            print("ç™»å½•å¤±è´¥")
 
     def get_origin(self):
         res = requests.post(url=self.host + '/user/s9010202/entrydatagrid', headers=self.headers)
@@ -106,23 +106,34 @@ class Login:
             lis = list(data.values())
             lis.reverse()
             return "".join(lis[:2])
+    
+    def read_ini(self):
+        username = self.config.get('Info', 'username')
+        password = self.config.get('Info', 'password')
+        return username, password
+    
+    def set_ini(self, dic):
+        for k, v in dic.items():
+            self.config.set('Info', k, v)
+        with open(self.path, 'w') as configfile:
+            self.config.write(configfile)
 
     def main(self, *arg, **kwargs):
         try:
             user, origin = self.run(*arg, **kwargs)
         except ConnectionError as e:
-            print('\nÁ¬½Ó´íÎó£º\n', '\tÄãÉÏ·É»úÁËÂğ?¾Í½ğ±£µÇÂ¼£¬³ôĞ¡×Ó')
+            print('\nè¿æ¥é”™è¯¯ï¼š\n', '\tä½ ä¸Šé£æœºäº†å—?å°±é‡‘ä¿ç™»å½•ï¼Œè‡­å°å­')
         except Timeout as e:
-            print('\nÁ¬½Ó³¬Ê±£º\n', '\tÇëÖØÊÔ')
+            print('\nè¿æ¥è¶…æ—¶ï¼š\n', '\tè¯·é‡è¯•')
         except TooManyRedirects as e:
-            print('ÖØ¶¨Ïò´ÎÊı¹ı¶à£º', e)
+            print('é‡å®šå‘æ¬¡æ•°è¿‡å¤šï¼š', e)
         except RequestException as e:
-            print('ÇëÇóÒì³££º', e)
+            print('è¯·æ±‚å¼‚å¸¸ï¼š', e)
         else:
             return user, origin
 
 
 if __name__ == "__main__":
     l = Login()
-    l.main(name='¸ßÉı', idcard='230304199812134414')
+    l.main(name='é«˜å‡', idcard='230304199812134414')
     # l.main()

@@ -14,6 +14,7 @@
 #
 # ///////////////////////////////////////////////////////////////
 
+from myfunction import *
 import sys
 import os
 import platform
@@ -36,6 +37,7 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.L = Login()
 
         # self.useCustomTheme = None
         # self.abspath = None
@@ -77,9 +79,11 @@ class MainWindow(QMainWindow):
         widgets.btn_batch.clicked.connect(self.buttonClick)
         widgets.btn_set.clicked.connect(self.buttonClick)
         widgets.btn_background.clicked.connect(self.buttonClick)
-
+        # login_page
         widgets.pb_login_login.clicked.connect(self.buttonClick)
         widgets.pb_rc_login.clicked.connect(self.buttonClick)
+        # set_page
+        widgets.pb_submit_set.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -179,10 +183,13 @@ class MainWindow(QMainWindow):
                 self.useCustomTheme = True
 
         if btnName == "pb_rc_login":
-            pass
+            AppFunctions.read_ini(self.ui, self.L)
 
         if btnName == "pb_login_login":
-            AppFunctions.login(self.ui)
+            AppFunctions.login(self.ui, self.L)
+        
+        if btnName == "pb_submit_set":
+            AppFunctions.set_login(self.ui, self.L)
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
