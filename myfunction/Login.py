@@ -12,7 +12,7 @@ class Login:
         self.config = configparser.ConfigParser()
         self.path = os.path.join(os.path.dirname(__file__), 'config.ini')
         self.config.read(self.path)
-        self.host = 'http://' + self.config.get('Host', 'JB_host')
+        self.host = 'http://' + self.config.get('Host', 'jb_host')
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.95 Safari/537.36"
         }
@@ -111,26 +111,45 @@ class Login:
         username = self.config.get('Info', 'username')
         password = self.config.get('Info', 'password')
         return username, password
+
+    def read_all(self):
+        dic = {
+            "name": self.config.get('Info', 'username'),
+            "idcard": self.config.get('Info', 'password'),
+            "path": self.config.get('Path', 'download'),
+            "host": self.config.get('Host', 'host'),
+            "jb_host": self.config.get('Host', 'jb_host'),
+        }
+        return dic
     
-    def set_ini(self, dic):
+    def set_ini(self, key, dic):
         for k, v in dic.items():
-            self.config.set('Info', k, v)
+            self.config.set(key, k, v)
         with open(self.path, 'w') as configfile:
             self.config.write(configfile)
 
     def main(self, *arg, **kwargs):
+        error = 'None'
         try:
             user, origin = self.run(*arg, **kwargs)
         except ConnectionError as e:
-            print('\n连接错误：\n', '\t你上飞机了吗?就金保登录，臭小子')
+            error = '连接错误：你上飞机了吗?就登录，臭小子'
+            user = origin = '未知'
+            # print(error)
         except Timeout as e:
-            print('\n连接超时：\n', '\t请重试')
+            error = '连接超时：请重试'
+            user = origin = '未知'
+            print(error)
         except TooManyRedirects as e:
-            print('重定向次数过多：', e)
+            error = f'重定向次数过多：{e}'
+            user = origin = '未知'
+            print(error)
         except RequestException as e:
-            print('请求异常：', e)
-        else:
-            return user, origin
+            error = f'请求异常：{e}'
+            user = origin = '未知'
+            print(error)
+        finally:
+            return user, origin, error
 
 
 if __name__ == "__main__":

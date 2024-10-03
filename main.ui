@@ -1877,179 +1877,255 @@ background-repeat: no-repeat;</string>
                       </property>
                      </widget>
                      <widget class="QWidget" name="login">
-                      <widget class="QLineEdit" name="le_idcard_login">
+                      <widget class="QWidget" name="widget" native="true">
                        <property name="geometry">
                         <rect>
-                         <x>460</x>
-                         <y>180</y>
-                         <width>300</width>
-                         <height>50</height>
+                         <x>0</x>
+                         <y>0</y>
+                         <width>1181</width>
+                         <height>611</height>
                         </rect>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(33, 37, 43);</string>
-                       </property>
-                      </widget>
-                      <widget class="QLineEdit" name="le_name_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>460</x>
-                         <y>250</y>
-                         <width>300</width>
-                         <height>50</height>
-                        </rect>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(33, 37, 43);</string>
-                       </property>
-                      </widget>
-                      <widget class="QLineEdit" name="le_origin_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>890</x>
-                         <y>150</y>
-                         <width>281</width>
-                         <height>30</height>
-                        </rect>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(33, 37, 43);</string>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignmentFlag::AlignCenter</set>
-                       </property>
-                      </widget>
-                      <widget class="QLabel" name="lb_idcard_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>350</x>
-                         <y>190</y>
-                         <width>101</width>
-                         <height>41</height>
-                        </rect>
-                       </property>
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;身份证号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                      <widget class="QLabel" name="lb_name_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>360</x>
-                         <y>260</y>
-                         <width>91</width>
-                         <height>31</height>
-                        </rect>
-                       </property>
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;姓名&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                      <widget class="QLabel" name="lb_title_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>470</x>
-                         <y>30</y>
-                         <width>231</width>
-                         <height>91</height>
-                        </rect>
-                       </property>
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:700;&quot;&gt;登录&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                      <widget class="QPushButton" name="pb_rc_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>460</x>
-                         <y>340</y>
-                         <width>100</width>
-                         <height>40</height>
-                        </rect>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(52, 59, 72);</string>
-                       </property>
-                       <property name="text">
-                        <string>读取配置</string>
-                       </property>
-                      </widget>
-                      <widget class="QPushButton" name="pb_login_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>660</x>
-                         <y>340</y>
-                         <width>100</width>
-                         <height>40</height>
-                        </rect>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(52, 59, 72);</string>
-                       </property>
-                       <property name="text">
-                        <string>登录</string>
-                       </property>
-                      </widget>
-                      <widget class="QLabel" name="lb_user_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>840</x>
-                         <y>110</y>
-                         <width>53</width>
-                         <height>30</height>
-                        </rect>
-                       </property>
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;用户&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                      <widget class="QLabel" name="lb_origin_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>840</x>
-                         <y>150</y>
-                         <width>53</width>
-                         <height>30</height>
-                        </rect>
-                       </property>
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;机构&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                      <widget class="QLabel" name="lb_statue_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>850</x>
-                         <y>60</y>
-                         <width>100</width>
-                         <height>40</height>
-                        </rect>
-                       </property>
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;登录状态：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                      <widget class="QLineEdit" name="le_user_login">
-                       <property name="geometry">
-                        <rect>
-                         <x>890</x>
-                         <y>110</y>
-                         <width>281</width>
-                         <height>30</height>
-                        </rect>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(33, 37, 43);</string>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignmentFlag::AlignCenter</set>
-                       </property>
+                       <widget class="QFrame" name="frame">
+                        <property name="geometry">
+                         <rect>
+                          <x>370</x>
+                          <y>220</y>
+                          <width>421</width>
+                          <height>241</height>
+                         </rect>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::Shape::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Shadow::Raised</enum>
+                        </property>
+                        <widget class="QLabel" name="lb_idcard_login">
+                         <property name="geometry">
+                          <rect>
+                           <x>0</x>
+                           <y>30</y>
+                           <width>101</width>
+                           <height>41</height>
+                          </rect>
+                         </property>
+                         <property name="text">
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;身份证号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         </property>
+                        </widget>
+                        <widget class="QLineEdit" name="le_name_login">
+                         <property name="geometry">
+                          <rect>
+                           <x>110</x>
+                           <y>90</y>
+                           <width>300</width>
+                           <height>50</height>
+                          </rect>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(33, 37, 43);</string>
+                         </property>
+                        </widget>
+                        <widget class="QLineEdit" name="le_idcard_login">
+                         <property name="geometry">
+                          <rect>
+                           <x>110</x>
+                           <y>20</y>
+                           <width>300</width>
+                           <height>50</height>
+                          </rect>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(33, 37, 43);</string>
+                         </property>
+                        </widget>
+                        <widget class="QLabel" name="lb_name_login">
+                         <property name="geometry">
+                          <rect>
+                           <x>10</x>
+                           <y>100</y>
+                           <width>91</width>
+                           <height>31</height>
+                          </rect>
+                         </property>
+                         <property name="text">
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;姓名&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         </property>
+                        </widget>
+                        <widget class="QPushButton" name="pb_login_login">
+                         <property name="geometry">
+                          <rect>
+                           <x>300</x>
+                           <y>170</y>
+                           <width>100</width>
+                           <height>40</height>
+                          </rect>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(52, 59, 72);</string>
+                         </property>
+                         <property name="text">
+                          <string>登录</string>
+                         </property>
+                        </widget>
+                        <widget class="QPushButton" name="pb_rc_login">
+                         <property name="geometry">
+                          <rect>
+                           <x>110</x>
+                           <y>170</y>
+                           <width>100</width>
+                           <height>40</height>
+                          </rect>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(52, 59, 72);</string>
+                         </property>
+                         <property name="text">
+                          <string>读取配置</string>
+                         </property>
+                        </widget>
+                       </widget>
+                       <widget class="QFrame" name="frame_2">
+                        <property name="geometry">
+                         <rect>
+                          <x>490</x>
+                          <y>60</y>
+                          <width>201</width>
+                          <height>101</height>
+                         </rect>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::Shape::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Shadow::Raised</enum>
+                        </property>
+                        <widget class="QLabel" name="lb_title_login">
+                         <property name="geometry">
+                          <rect>
+                           <x>10</x>
+                           <y>0</y>
+                           <width>181</width>
+                           <height>91</height>
+                          </rect>
+                         </property>
+                         <property name="text">
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:700;&quot;&gt;登录&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         </property>
+                        </widget>
+                       </widget>
+                       <widget class="QFrame" name="frame_3">
+                        <property name="geometry">
+                         <rect>
+                          <x>820</x>
+                          <y>100</y>
+                          <width>341</width>
+                          <height>161</height>
+                         </rect>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::Shape::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Shadow::Raised</enum>
+                        </property>
+                        <widget class="QLineEdit" name="le_user_login">
+                         <property name="enabled">
+                          <bool>true</bool>
+                         </property>
+                         <property name="geometry">
+                          <rect>
+                           <x>50</x>
+                           <y>70</y>
+                           <width>281</width>
+                           <height>30</height>
+                          </rect>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(33, 37, 43);</string>
+                         </property>
+                         <property name="text">
+                          <string>未知</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string/>
+                         </property>
+                        </widget>
+                        <widget class="QLineEdit" name="le_origin_login">
+                         <property name="enabled">
+                          <bool>true</bool>
+                         </property>
+                         <property name="geometry">
+                          <rect>
+                           <x>50</x>
+                           <y>110</y>
+                           <width>281</width>
+                           <height>30</height>
+                          </rect>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(33, 37, 43);</string>
+                         </property>
+                         <property name="text">
+                          <string>未知</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignmentFlag::AlignCenter</set>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
+                         <property name="placeholderText">
+                          <string/>
+                         </property>
+                        </widget>
+                        <widget class="QLabel" name="lb_origin_login">
+                         <property name="geometry">
+                          <rect>
+                           <x>0</x>
+                           <y>110</y>
+                           <width>53</width>
+                           <height>30</height>
+                          </rect>
+                         </property>
+                         <property name="text">
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;机构&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         </property>
+                        </widget>
+                        <widget class="QLabel" name="lb_statue_login">
+                         <property name="geometry">
+                          <rect>
+                           <x>10</x>
+                           <y>20</y>
+                           <width>100</width>
+                           <height>40</height>
+                          </rect>
+                         </property>
+                         <property name="text">
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;登录状态：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         </property>
+                        </widget>
+                        <widget class="QLabel" name="lb_user_login">
+                         <property name="geometry">
+                          <rect>
+                           <x>0</x>
+                           <y>70</y>
+                           <width>53</width>
+                           <height>30</height>
+                          </rect>
+                         </property>
+                         <property name="text">
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;用户&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                         </property>
+                        </widget>
+                       </widget>
                       </widget>
                      </widget>
                      <widget class="QWidget" name="search">
@@ -2235,6 +2311,9 @@ background-repeat: no-repeat;</string>
                        <property name="styleSheet">
                         <string notr="true">background-color: rgb(33, 37, 43);</string>
                        </property>
+                       <property name="placeholderText">
+                        <string>选择excel文件路径</string>
+                       </property>
                       </widget>
                       <widget class="QWidget" name="gridLayoutWidget">
                        <property name="geometry">
@@ -2265,6 +2344,9 @@ background-repeat: no-repeat;</string>
                           <property name="styleSheet">
                            <string notr="true">background-color: rgb(33, 37, 43);</string>
                           </property>
+                          <property name="placeholderText">
+                           <string>默认第一个Sheet表</string>
+                          </property>
                          </widget>
                         </item>
                         <item row="0" column="3">
@@ -2272,33 +2354,42 @@ background-repeat: no-repeat;</string>
                           <property name="styleSheet">
                            <string notr="true">background-color: rgb(33, 37, 43);</string>
                           </property>
+                          <property name="placeholderText">
+                           <string>默认A列</string>
+                          </property>
                          </widget>
                         </item>
                         <item row="1" column="0">
-                         <widget class="QLabel" name="lb_hy_batch">
+                         <widget class="QLabel" name="lb_startrow_batch">
                           <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;行域&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;首行&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                           </property>
                          </widget>
                         </item>
                         <item row="1" column="1">
-                         <widget class="QLineEdit" name="le_hy_batch">
+                         <widget class="QLineEdit" name="le_startrow_batch">
                           <property name="styleSheet">
                            <string notr="true">background-color: rgb(33, 37, 43);</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>起始行，默认第一行</string>
                           </property>
                          </widget>
                         </item>
                         <item row="1" column="2">
-                         <widget class="QLabel" name="lb_other_batch">
+                         <widget class="QLabel" name="lb_endrow_batch">
                           <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;其他&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;尾行&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                           </property>
                          </widget>
                         </item>
                         <item row="1" column="3">
-                         <widget class="QLineEdit" name="le_other_batch">
+                         <widget class="QLineEdit" name="le_endrow_batch">
                           <property name="styleSheet">
                            <string notr="true">background-color: rgb(33, 37, 43);</string>
+                          </property>
+                          <property name="placeholderText">
+                           <string>结束行，默认数据最后一行</string>
                           </property>
                          </widget>
                         </item>
@@ -3561,6 +3652,9 @@ background-repeat: no-repeat;</string>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(33, 37, 43);</string>
                          </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
                         </widget>
                         <widget class="QLabel" name="lb_name_set">
                          <property name="geometry">
@@ -3586,6 +3680,9 @@ background-repeat: no-repeat;</string>
                          </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(33, 37, 43);</string>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
                          </property>
                         </widget>
                         <widget class="QPushButton" name="pb_submit_set">
@@ -3638,6 +3735,9 @@ background-repeat: no-repeat;</string>
                          </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(33, 37, 43);</string>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
                          </property>
                         </widget>
                         <widget class="QPushButton" name="pb_choose_set">
@@ -3704,6 +3804,9 @@ background-repeat: no-repeat;</string>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(33, 37, 43);</string>
                          </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
                         </widget>
                         <widget class="QLineEdit" name="le_JB_set">
                          <property name="geometry">
@@ -3717,6 +3820,9 @@ background-repeat: no-repeat;</string>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgb(33, 37, 43);</string>
                          </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
+                         </property>
                         </widget>
                         <widget class="QPushButton" name="pb_submit_set2">
                          <property name="geometry">
@@ -3729,6 +3835,32 @@ background-repeat: no-repeat;</string>
                          </property>
                          <property name="text">
                           <string>提交</string>
+                         </property>
+                        </widget>
+                        <widget class="QPushButton" name="pb_edit_set">
+                         <property name="geometry">
+                          <rect>
+                           <x>310</x>
+                           <y>270</y>
+                           <width>71</width>
+                           <height>31</height>
+                          </rect>
+                         </property>
+                         <property name="text">
+                          <string>编辑</string>
+                         </property>
+                        </widget>
+                        <widget class="QPushButton" name="pb_edit_set2">
+                         <property name="geometry">
+                          <rect>
+                           <x>550</x>
+                           <y>510</y>
+                           <width>71</width>
+                           <height>31</height>
+                          </rect>
+                         </property>
+                         <property name="text">
+                          <string>编辑</string>
                          </property>
                         </widget>
                        </widget>

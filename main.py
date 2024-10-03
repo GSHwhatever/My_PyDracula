@@ -14,7 +14,6 @@
 #
 # ///////////////////////////////////////////////////////////////
 
-from myfunction import *
 import sys
 import os
 import platform
@@ -23,6 +22,7 @@ import platform
 # ///////////////////////////////////////////////////////////////
 from modules import *
 from widgets import *
+from myfunction import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
 # SET AS GLOBAL WIDGETS
@@ -37,7 +37,9 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.L = Login()
+        # self.my_thread = None
+        self.Login = Login()
+        self.set_page()
 
         # self.useCustomTheme = None
         # self.abspath = None
@@ -51,8 +53,8 @@ class MainWindow(QMainWindow):
 
         # APP NAME
         # ///////////////////////////////////////////////////////////////
-        title = "PyDracula - Modern GUI"
-        description = "PyDracula APP - Theme with colors based on Dracula for Python."
+        title = "Jinbao Downloader Speed Edition"
+        description = "金保下载器极速版"
         # APPLY TEXTS
         self.setWindowTitle(title)
         widgets.titleRightInfo.setText(description)
@@ -82,8 +84,13 @@ class MainWindow(QMainWindow):
         # login_page
         widgets.pb_login_login.clicked.connect(self.buttonClick)
         widgets.pb_rc_login.clicked.connect(self.buttonClick)
+        # batch_page
+        widgets.pb_select_batch.clicked.connect(self.buttonClick)
         # set_page
         widgets.pb_submit_set.clicked.connect(self.buttonClick)
+        widgets.pb_choose_set.clicked.connect(self.buttonClick)
+        widgets.pb_edit_set.clicked.connect(self.buttonClick)
+        widgets.pb_edit_set2.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -183,17 +190,63 @@ class MainWindow(QMainWindow):
                 self.useCustomTheme = True
 
         if btnName == "pb_rc_login":
-            AppFunctions.read_ini(self.ui, self.L)
+            user, idcard = self.Login.read_ini()
+            self.ui.le_idcard_login.setText(idcard)
+            self.ui.le_name_login.setText(user)
 
         if btnName == "pb_login_login":
-            AppFunctions.login(self.ui, self.L)
+            self.ui.pb_login_login.setEnabled(False)
+            self.my_thread = Worker(name=self.ui.le_name_login.text(), idcard=self.ui.le_idcard_login.text(), Login=self.Login)
+            self.my_thread.result_ready.connect(self.update_le)
+            self.my_thread.start()
+
+        if btnName == "pb_select_batch":
+            options = QFileDialog.Options()
+            file_path, _ = QFileDialog.getOpenFileName(self, "选择文件", "", "所有文件 (*);;文本文件 (*.txt)", options=options)
+
+            # 如果用户选择了文件，则更新标签显示文件路径
+            if file_path:
+                print(file_path)
+                self.ui.le_input_batch.setText(file_path)
         
         if btnName == "pb_submit_set":
-            AppFunctions.set_login(self.ui, self.L)
+            self.Login.set_ini("Info", {"username": self.ui.le_name_set.text(), "password": self.ui.le_idcard_set.text()})
+            self.ui.le_idcard_set.setReadOnly(True)
+            self.ui.le_name_set.setReadOnly(True)
+        
+        if btnName == "pb_choose_set":
+            folder_path = QFileDialog.getExistingDirectory(self, "选择文件夹", "")
+            if folder_path:
+                self.Login.set_ini("Path", {"download": folder_path})
+                self.ui.le_path_set.setText(folder_path)
+        
+        if btnName == "pb_submit_set2":
+            self.Login.set_ini("Host", {"host": self.ui.le_jb_set.text(), "jb_host": self.ui.le_JB_set.text()})
+            self.ui.le_idcard_set.setReadOnly(True)
+            self.ui.le_name_set.setReadOnly(True)
+
+        if btnName == "pb_edit_set":
+            self.ui.le_idcard_set.setReadOnly(False)
+            self.ui.le_name_set.setReadOnly(False)
+        
+        if btnName == "pb_edit_set2":
+            self.ui.le_jb_set.setReadOnly(False)
+            self.ui.le_JB_set.setReadOnly(False)
+
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
 
+    def update_le(self, user, origin, error):
+        self.ui.pb_login_login.setEnabled(True)
+        if error=='None':
+            self.ui.le_user_login.setText(user)
+            self.ui.le_origin_login.setText(origin)  
+        else:
+            messbox = QMessageBox()
+            messbox.setWindowTitle("Login Error")
+            messbox.setText(error)
+            messbox.exec()
 
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
@@ -214,6 +267,15 @@ class MainWindow(QMainWindow):
         if event.buttons() == Qt.RightButton:
             # print('Mouse click: RIGHT CLICK')
             pass
+    
+    def set_page(self):
+        res_dic = self.Login.read_all()
+        self.ui.le_idcard_set.setText(res_dic.get('idcard'))
+        self.ui.le_name_set.setText(res_dic.get('name'))
+        self.ui.le_path_set.setText(res_dic.get('path'))
+        self.ui.le_jb_set.setText(res_dic.get('host'))
+        self.ui.le_JB_set.setText(res_dic.get('jb_host'))
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

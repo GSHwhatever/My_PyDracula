@@ -40,22 +40,4 @@ class AppFunctions(MainWindow):
         # self.ui.horizontalScrollBar.setStyleSheet("background-color: #6272a4;")
         # self.ui.verticalScrollBar.setStyleSheet("background-color: #6272a4;")
         # self.ui.commandLinkButton.setStyleSheet("color: #ff79c6;")
-    
-    def login(self, L):
-        idcard = self.le_idcard_login.text()
-        name = self.le_name_login.text()
-        user, origin = L.main(name=name, idcard=idcard)
-        self.le_user_login.setText(user)
-        self.le_origin_login.setText(origin)
-
-    def read_ini(self, L):
-        user, idcard = L.read_ini()
-        self.le_idcard_login.setText(idcard)
-        self.le_name_login.setText(user)
-    
-    def set_login(self, L):
-        idcard = self.le_idcard_set.text()
-        name = self.le_name_set.text()
-        L.set_ini({"username": name, "password": idcard})
-
 
