@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
         # self.my_thread = None
         self.Login = Login()
         self.set_page()
-
+        self.set_column_widths()
         # self.useCustomTheme = None
         # self.abspath = None
 
@@ -67,9 +67,9 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         UIFunctions.uiDefinitions(self)
 
-        # QTableWidget PARAMETERS
+        # QTableWidget PARAMETERS 表格的列宽自动调整以填满可用空间
         # ///////////////////////////////////////////////////////////////
-        widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        # widgets.tableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         # BUTTONS CLICK
         # ///////////////////////////////////////////////////////////////
@@ -84,8 +84,11 @@ class MainWindow(QMainWindow):
         # login_page
         widgets.pb_login_login.clicked.connect(self.buttonClick)
         widgets.pb_rc_login.clicked.connect(self.buttonClick)
+        # search_page
+        widgets.pushButton.clicked.connect(self.buttonClick)
         # batch_page
         widgets.pb_select_batch.clicked.connect(self.buttonClick)
+        widgets.pb_run_batch.clicked.connect(self.buttonClick)
         # set_page
         widgets.pb_submit_set.clicked.connect(self.buttonClick)
         widgets.pb_choose_set.clicked.connect(self.buttonClick)
@@ -196,9 +199,15 @@ class MainWindow(QMainWindow):
 
         if btnName == "pb_login_login":
             self.ui.pb_login_login.setEnabled(False)
-            self.my_thread = Worker(name=self.ui.le_name_login.text(), idcard=self.ui.le_idcard_login.text(), Login=self.Login)
+            self.my_thread = LoginWorker(name=self.ui.le_name_login.text(), idcard=self.ui.le_idcard_login.text(), Login=self.Login)
             self.my_thread.result_ready.connect(self.update_le)
             self.my_thread.start()
+        
+        if btnName == "pushButton":
+            idcard = self.ui.lineEdit.text()
+            self.search_thread = SearchWorker(idcard)
+            self.search_thread.search_result.connect(self.table_update)
+            self.search_thread.start()
 
         if btnName == "pb_select_batch":
             options = QFileDialog.Options()
@@ -208,6 +217,32 @@ class MainWindow(QMainWindow):
             if file_path:
                 print(file_path)
                 self.ui.le_input_batch.setText(file_path)
+
+        if btnName == "pb_run_batch":
+            dic = {
+                "path": self.ui.le_input_batch.text(),
+                "sheet": self.ui.le_sheet_batch.text(),
+                "col": self.ui.le_colum_batch.text(),
+                "start_row": self.ui.le_startrow_batch.text(),
+                "end_row": self.ui.le_endrow_batch.text(),
+                "jb_status": self.ui.cb_jbbx.isChecked(),
+                "tz_status": self.ui.cb_jbtz.isChecked(),
+                "cb_status": self.ui.cb_jbinfo.isChecked()
+            }
+            text = f"""
+            文件位置: {dic.get('path')}
+            表名: {dic.get('sheet')}
+            身份证号所在列: {dic.get('col')}
+            起始行: {dic.get('start_row')}
+            结束行: {dic.get('end_row')}
+            经办端保险: {dic.get('jb_status')}
+            金保台账: {dic.get('tz_status')}
+            金保个人信息: {dic.get('cb_status')}
+            """
+            self.ui.tb_batch.setPlainText(text)
+            self.work = MainWorker(dic)
+            self.work.run_ready.connect(self.run_result)
+            self.work.start()
         
         if btnName == "pb_submit_set":
             self.Login.set_ini("Info", {"username": self.ui.le_name_set.text(), "password": self.ui.le_idcard_set.text()})
@@ -244,9 +279,46 @@ class MainWindow(QMainWindow):
             self.ui.le_origin_login.setText(origin)  
         else:
             messbox = QMessageBox()
-            messbox.setWindowTitle("Login Error")
+            messbox.setWindowTitle("登录错误")
             messbox.setText(error)
             messbox.exec()
+    
+    def table_update(self, dic):
+        table_dic = {
+            "ryjb_info": self.ui.tableWidget,
+            "jydj_info": self.ui.tableWidget_3,
+            "sydj_info": self.ui.tableWidget_4,
+            "jycyz_info": self.ui.tableWidget_5,
+            "knrd_info": self.ui.tableWidget_6,
+            "zgzs_info": self.ui.tableWidget_7,
+        }
+        for key, table in table_dic.items():
+            lis = dic.get(key)
+            # print(lis)
+            for r, d in enumerate(lis):
+                header = table.horizontalHeader()
+                headers = [header.model().headerData(i, Qt.Horizontal) for i in range(table.columnCount())]
+                # print(f'{key}--{headers}')
+                for i, h in enumerate(headers):
+                    text = d.get(h) if d.get(h) else ""
+                    # print(f'{text}--{type(text)}')
+                    text_item = QTableWidgetItem(str(text))
+                    text_item.setTextAlignment(Qt.AlignCenter)
+                    table.setItem(r, i, text_item)
+            table.resizeColumnsToContents()
+            # column_count = self.ui.tableWidget.columnCount()
+            # widths = []
+            # for i in range(column_count):
+            #     width = self.ui.tableWidget.columnWidth(i)
+            #     widths.append(width)
+            # print("当前每列的宽度:", widths)
+
+    
+    def run_result(self, result):
+        messbox = QMessageBox()
+        messbox.setWindowTitle("导出结果")
+        messbox.setText(result)
+        messbox.exec()
 
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
@@ -275,6 +347,10 @@ class MainWindow(QMainWindow):
         self.ui.le_path_set.setText(res_dic.get('path'))
         self.ui.le_jb_set.setText(res_dic.get('host'))
         self.ui.le_JB_set.setText(res_dic.get('jb_host'))
+    
+    def set_column_widths(self):
+        for i, v in enumerate([145, 50, 50, 50, 85, 130, 75, 75, 95, 75, 60, 75, 85]):
+            self.ui.tableWidget.setColumnWidth(i, v)
 
 
 if __name__ == "__main__":

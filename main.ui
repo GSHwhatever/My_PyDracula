@@ -1867,7 +1867,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -2211,7 +2211,7 @@ background-repeat: no-repeat;</string>
                            <string>查询</string>
                           </property>
                          </widget>
-                         <widget class="QTabWidget" name="tabWidget">
+                         <widget class="QTabWidget" name="ryjb_info">
                           <property name="geometry">
                            <rect>
                             <x>0</x>
@@ -2223,46 +2223,890 @@ background-repeat: no-repeat;</string>
                           <property name="currentIndex">
                            <number>0</number>
                           </property>
-                          <widget class="QWidget" name="tab">
+                          <widget class="QWidget" name="tab_7">
                            <attribute name="title">
-                            <string>Tab 1</string>
+                            <string>人员基本信息</string>
                            </attribute>
                            <widget class="QTableWidget" name="tableWidget">
                             <property name="geometry">
                              <rect>
-                              <x>5</x>
-                              <y>1</y>
+                              <x>0</x>
+                              <y>0</y>
                               <width>1151</width>
                               <height>421</height>
                              </rect>
                             </property>
-                            <column>
-                             <property name="text">
-                              <string>新建列</string>
-                             </property>
-                            </column>
-                            <column>
+                            <property name="rowCount">
+                             <number>5</number>
+                            </property>
+                            <property name="columnCount">
+                             <number>13</number>
+                            </property>
+                            <attribute name="verticalHeaderDefaultSectionSize">
+                             <number>40</number>
+                            </attribute>
+                            <row>
                              <property name="text">
                               <string>1</string>
                              </property>
-                            </column>
-                            <column>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
                              <property name="text">
                               <string>2</string>
                              </property>
-                            </column>
-                            <column>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
                              <property name="text">
                               <string>3</string>
                              </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>4</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>5</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <column>
+                             <property name="text">
+                              <string>社会保障号</string>
+                             </property>
                             </column>
-                            <column/>
+                            <column>
+                             <property name="text">
+                              <string>姓名</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>性别</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>民族</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>出生日期</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业创业证号码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>人员类别</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>文化程度</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>手机号码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业状态</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办人</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办机构</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办日期</string>
+                             </property>
+                            </column>
                            </widget>
                           </widget>
                           <widget class="QWidget" name="tab_2">
                            <attribute name="title">
-                            <string>Tab 2</string>
+                            <string>就业登记信息</string>
                            </attribute>
+                           <widget class="QTableWidget" name="tableWidget_3">
+                            <property name="geometry">
+                             <rect>
+                              <x>0</x>
+                              <y>0</y>
+                              <width>1151</width>
+                              <height>421</height>
+                             </rect>
+                            </property>
+                            <attribute name="horizontalHeaderMinimumSectionSize">
+                             <number>50</number>
+                            </attribute>
+                            <attribute name="horizontalHeaderDefaultSectionSize">
+                             <number>125</number>
+                            </attribute>
+                            <attribute name="verticalHeaderMinimumSectionSize">
+                             <number>30</number>
+                            </attribute>
+                            <attribute name="verticalHeaderDefaultSectionSize">
+                             <number>40</number>
+                            </attribute>
+                            <row>
+                             <property name="text">
+                              <string>1</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>2</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>3</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>4</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>5</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <column>
+                             <property name="text">
+                              <string>社会保障号</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>姓名</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>性别</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>证件类型</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>证件号码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业类型</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>有效标记</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>单位名称</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>单位统一社会信用代码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>单位类型</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业形式</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业类型</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业登记日期</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业日期</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业地点</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业地点详细地址</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业职业（工种）</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业工种名称</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>从事产业类别</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>是否登记失业人员</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>是否就业困难人员</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>注册日期【个体经营】</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经营住所【个体经营】</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>工作内容【灵活就业】</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>合同开始日期</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>合同结束日期</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>岗位名称</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>岗位编码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>是否4050人员</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>薪资报酬</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业困难人员类别</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办人</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办机构</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办日期</string>
+                             </property>
+                            </column>
+                           </widget>
+                          </widget>
+                          <widget class="QWidget" name="tab_3">
+                           <attribute name="title">
+                            <string>失业登记信息</string>
+                           </attribute>
+                           <widget class="QTableWidget" name="tableWidget_4">
+                            <property name="geometry">
+                             <rect>
+                              <x>0</x>
+                              <y>0</y>
+                              <width>1151</width>
+                              <height>421</height>
+                             </rect>
+                            </property>
+                            <attribute name="verticalHeaderMinimumSectionSize">
+                             <number>25</number>
+                            </attribute>
+                            <attribute name="verticalHeaderDefaultSectionSize">
+                             <number>40</number>
+                            </attribute>
+                            <row>
+                             <property name="text">
+                              <string>1</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>2</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>3</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>4</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>5</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <column>
+                             <property name="text">
+                              <string>失业登记日期</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>社会保障号码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>姓名</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>性别</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>证件类型</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>证件号码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>学历</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>户籍地区划</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>常住地区划</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>失业时间</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>失业原因</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>有效标记</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办人</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办机构</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办日期</string>
+                             </property>
+                            </column>
+                           </widget>
+                          </widget>
+                          <widget class="QWidget" name="tab_4">
+                           <attribute name="title">
+                            <string>就业创业证信息</string>
+                           </attribute>
+                           <widget class="QTableWidget" name="tableWidget_5">
+                            <property name="geometry">
+                             <rect>
+                              <x>0</x>
+                              <y>0</y>
+                              <width>1151</width>
+                              <height>431</height>
+                             </rect>
+                            </property>
+                            <attribute name="horizontalHeaderDefaultSectionSize">
+                             <number>120</number>
+                            </attribute>
+                            <attribute name="verticalHeaderDefaultSectionSize">
+                             <number>40</number>
+                            </attribute>
+                            <row>
+                             <property name="text">
+                              <string>1</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>2</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>3</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>4</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>5</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <column>
+                             <property name="text">
+                              <string>身份证号</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>姓名</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>性别</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>证件申请类型</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业创业证号码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>原证件号码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>发放标记</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>有效标记</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>发放日期</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>发证机构</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办人</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办机构</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>经办日期</string>
+                             </property>
+                            </column>
+                           </widget>
+                          </widget>
+                          <widget class="QWidget" name="tab_5">
+                           <attribute name="title">
+                            <string>就业困难人员认定信息</string>
+                           </attribute>
+                           <widget class="QTableWidget" name="tableWidget_6">
+                            <property name="geometry">
+                             <rect>
+                              <x>0</x>
+                              <y>0</y>
+                              <width>1151</width>
+                              <height>421</height>
+                             </rect>
+                            </property>
+                            <attribute name="horizontalHeaderDefaultSectionSize">
+                             <number>110</number>
+                            </attribute>
+                            <attribute name="verticalHeaderDefaultSectionSize">
+                             <number>40</number>
+                            </attribute>
+                            <row>
+                             <property name="text">
+                              <string>1</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>2</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>3</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>4</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>5</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <column>
+                             <property name="text">
+                              <string>社会保障号</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>姓名</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>证件号码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>性别</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>出生日期</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>住址</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>联系电话</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>人员类别</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>有效标记</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业援助对象类型</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业援助对象认定时间</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>就业援助对象有效期开始时间</string>
+                             </property>
+                            </column>
+                           </widget>
+                          </widget>
+                          <widget class="QWidget" name="tab_6">
+                           <attribute name="title">
+                            <string>职业资格证书信息</string>
+                           </attribute>
+                           <widget class="QTableWidget" name="tableWidget_7">
+                            <property name="geometry">
+                             <rect>
+                              <x>0</x>
+                              <y>0</y>
+                              <width>1151</width>
+                              <height>421</height>
+                             </rect>
+                            </property>
+                            <attribute name="horizontalHeaderDefaultSectionSize">
+                             <number>115</number>
+                            </attribute>
+                            <attribute name="verticalHeaderDefaultSectionSize">
+                             <number>40</number>
+                            </attribute>
+                            <row>
+                             <property name="text">
+                              <string>1</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>2</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>3</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>4</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <row>
+                             <property name="text">
+                              <string>5</string>
+                             </property>
+                             <property name="textAlignment">
+                              <set>AlignCenter</set>
+                             </property>
+                            </row>
+                            <column>
+                             <property name="text">
+                              <string>姓名</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>证件号码</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>性别</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>职业工种名称</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>职业方向</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>技能等级</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>理论知识考试成绩</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>技能考核成绩</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>评定成绩</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>文化程度</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>证书编号</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>发证日期</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>职业技能鉴定机构</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>发证机关</string>
+                             </property>
+                            </column>
+                            <column>
+                             <property name="text">
+                              <string>数据责任单位</string>
+                             </property>
+                            </column>
+                           </widget>
                           </widget>
                          </widget>
                         </widget>
@@ -4148,7 +4992,7 @@ background-repeat: no-repeat;</string>
                    </font>
                   </property>
                   <property name="text">
-                   <string>By: Wanderson M. Pimenta</string>
+                   <string>By: Whatever,</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>

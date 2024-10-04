@@ -17,8 +17,8 @@ class Base_Class:
         self.bh = 0
         config = configparser.ConfigParser()
         config.read(os.path.join(os.path.dirname(__file__), 'config.ini'))
-        self.JB_host = 'http://' + config.get('Host', 'JB_host')
-        self.host = 'http://' + config.get('Host', 'jb_host')
+        self.JB_host = 'http://' + config.get('Host', 'jb_host')
+        self.host = 'http://' + config.get('Host', 'host')
         out_path = config.get('Path', 'download')
         self.out_path = out_path if os.path.exists(out_path) else os.path.join(os.environ['USERPROFILE'], 'Desktop')
         self.dic = Dict
@@ -52,17 +52,21 @@ class Base_Class:
                 return token
     
     def read_file(self, path, col_tag, part=None, sheet=None):
+        if not col_tag:
+            col_tag = 'A'
         if not os.path.exists(path):
             pprint(f'{path},目标文件不存在')
         else:
             try:
                 wb = load_workbook(path)
             except ValueError as E:
-                print(f'{path}不能正常加载，可能存在未知格式，请检查是否存在筛选等操作')
-                return []
+                error = f'{path}不能正常加载，可能存在未知格式，请检查是否存在筛选等操作'
+                print(error)
+                return error
             except InvalidFileException as E:
-                print(f'不能处理{path.split(".")[-1]}类型的Excel文件,推荐另存为xlsx类型')
-                return []
+                error = f'不能处理{path.split(".")[-1]}类型的Excel文件,推荐另存为xlsx类型'
+                print(error)
+                return error
             else:
                 ws = wb.active
                 dic = []
@@ -73,9 +77,13 @@ class Base_Class:
                         else:
                             ws = wb[sheet]
                 except KeyError:
-                    print("工作表名称错误，无法找到指定的工作表。")
+                    error = "工作表名称错误，无法找到指定的工作表。"
+                    print(error)
+                    return error
                 except IndexError:
-                    print("提供的工作表索引超出了实际工作表数量。")
+                    error = "提供的工作表索引超出了实际工作表数量。"
+                    print(error)
+                    return error
                 finally:
                     lis = [cell.value for cell in ws[col_tag]]
                     if part:
@@ -131,3 +139,9 @@ class AuthError(Exception):
             return f"AuthError: {self.code} - {self.args[0]}"
         else:
             return f"AuthError: {self.args[0]}"
+    
+
+if __name__ == "__main__":
+    b = Base_Class()
+    s = b.read_file('C:/Users/GSH/Desktop/新建 Microsoft Excel 工作表.xlsx', None)
+    print(s)

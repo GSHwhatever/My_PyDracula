@@ -106,8 +106,8 @@ class JC_Query(Base_Class):
                     "单位名称": d.get('aab004'),
                     "单位统一社会信用代码": d.get(''),
                     "单位类型": d.get(''),
-                    "就业形势": self.dic.jyxs.get(d.get('acc318'), d.get('acc318')),
-                    "就业类型2": d.get(''),
+                    "就业形式": self.dic.jyxs.get(d.get('acc318'), d.get('acc318')),
+                    "就业类型": d.get(''),
                     "就业登记日期": d.get('aae043'),
                     "就业日期": d.get('acc114'),
                     "就业地点": d.get(''),
@@ -121,7 +121,7 @@ class JC_Query(Base_Class):
                     "经营住所【个体经营】": d.get(''),
                     "工作内容【灵活就业】": d.get(''),
                     "合同开始日期": d.get('aae030'),
-                    "合同结束岗位": d.get('aae031'),
+                    "合同结束日期": d.get('aae031'),
                     "岗位名称": d.get(''),
                     "岗位编码": d.get(''),
                     "是否4050人员": self.dic.sfry.get(d.get('acc02a'), d.get('acc02a')),
@@ -129,7 +129,7 @@ class JC_Query(Base_Class):
                     "就业困难人员类别": self.dic.rdlx.get(d.get('acc369'), d.get('acc369')),
                     "经办人": d.get('aae019'),
                     "经办机构": d.get('aae020'),
-                    "经办日期": d.get('aae043')
+                    "经办日期": d.get('aae030')
                 }
                 lis.append(dic)
             # ic(lis, sort_dicts=False)
@@ -202,7 +202,7 @@ class JC_Query(Base_Class):
                     "性别": self.dic.sex_dic.get(d.get('aac004'), d.get('aac004')),
                     "证件申请类型": self.dic.sqlx.get(d.get('acc0a1'), d.get('acc0a1')),
                     "就业创业证号码": d.get('aac021'),
-                    "原证件号码(换发或补发时填写)": "",
+                    "原证件号码": "",
                     "发放标记": self.dic.ffbj.get(d.get('acc0a3'), d.get('acc0a3')),
                     "有效标记": self.dic.yxbs.get(d.get('aae100'), d.get('aae100')),
                     "发放日期": d.get('acc341'),
@@ -288,7 +288,7 @@ class JC_Query(Base_Class):
                         "序号": i,
                         "姓名": payload.get('aac003'),
                         "证件号码": payload.get('aac002'),
-                        "性别": self.dic.sex_dic.get(d.get('aac004'), d.get('aac004')),
+                        "性别": d.get('xb'),
                         "职业工种名称": d.get('zymc'),
                         "职业方向": d.get('zyfx'),
                         "技能等级": d.get("jndj"),
@@ -388,6 +388,10 @@ class JC_Query(Base_Class):
             self.wb.save(os.path.join(self.out_path, f'基础信息查询结果{time.strftime("%Y-%m-%d")}.xlsx'))
         else:
             print(f'检查输出路径:{self.out_path}')
+
+    def search(self, id):
+        asyncio.run(self.run([id]))
+        return self.result_dic
     
 
 if __name__ == '__main__':

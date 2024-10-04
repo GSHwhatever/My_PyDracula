@@ -74,6 +74,9 @@ class RL(Base_Class):
                     "where": ""         
                 }
             self.result_dic[id_num] = dic
+        else:
+            print(f'status:{status}')
+            print(f'res:{res}')
 
     def save_result(self, dic):
         idcard = dic.get('id')
@@ -472,4 +475,5 @@ if __name__ == "__main__":
     '230304200009214015',
     '23030419960223461X',
     '230304198501184428']
-    rl.main(lis)
+    lis3 = ['230304199812134414', '230304200003034021']
+    rl.main(lis3)
