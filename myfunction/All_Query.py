@@ -9,8 +9,8 @@ import os, time, asyncio
 
 class JC_Query(Base_Class):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, ini_path, template_excel):
+        super().__init__(ini_path, template_excel)
         self.ws_dic = {
             "ryjb_info": '人员基本信息',
             "jydj_info": '就业登记信息',
@@ -21,7 +21,7 @@ class JC_Query(Base_Class):
         }
         self.result_dic = {}
         p = os.path.join(self.out_path, f'基础信息查询结果{time.strftime("%Y-%m-%d")}.xlsx')
-        path = p if os.path.exists(p) else os.path.join(os.path.dirname(__file__), 'template_excel', '基础信息查询结果.xlsx')
+        path = p if os.path.exists(p) else os.path.abspath(os.path.join(self.template_excel, '基础信息查询结果.xlsx'))
         self.wb = load_workbook(path)
         self.wb._manual_calculation = True      # 禁止自动计算
         self.Reset = Reset()

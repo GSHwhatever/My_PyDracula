@@ -38,7 +38,10 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         # self.my_thread = None
-        self.Login = Login()
+        abs_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__))))
+        self.ini_path = os.path.abspath(os.path.join(abs_path, 'config.ini'))
+        self.template_excel = os.path.abspath(os.path.join(abs_path, 'template_excel'))
+        self.Login = Login(self.ini_path)
         self.set_page()
         self.set_column_widths()
         # self.useCustomTheme = None
@@ -84,6 +87,7 @@ class MainWindow(QMainWindow):
         # login_page
         widgets.pb_login_login.clicked.connect(self.buttonClick)
         widgets.pb_rc_login.clicked.connect(self.buttonClick)
+        widgets.pb_vpn_login.clicked.connect(self.buttonClick)
         # search_page
         widgets.pushButton.clicked.connect(self.buttonClick)
         # batch_page
@@ -92,6 +96,7 @@ class MainWindow(QMainWindow):
         # set_page
         widgets.pb_submit_set.clicked.connect(self.buttonClick)
         widgets.pb_choose_set.clicked.connect(self.buttonClick)
+        widgets.pb_choose_set_2.clicked.connect(self.buttonClick)
         widgets.pb_edit_set.clicked.connect(self.buttonClick)
         widgets.pb_edit_set2.clicked.connect(self.buttonClick)
 
@@ -203,15 +208,22 @@ class MainWindow(QMainWindow):
             self.my_thread.result_ready.connect(self.update_le)
             self.my_thread.start()
         
+        if btnName == "pb_vpn_login":
+            self.ui.pb_vpn_login.setEnabled(False)
+            path = self.ui.le_path_set_2.text()
+            self.vpn_thread = VPNWorker(path)
+            self.vpn_thread.vpn_result.connect(self.vpn_res)
+            self.vpn_thread.start()
+        
         if btnName == "pushButton":
             idcard = self.ui.lineEdit.text()
-            self.search_thread = SearchWorker(idcard)
+            self.search_thread = SearchWorker(idcard, self.ini_path, self.template_excel)
             self.search_thread.search_result.connect(self.table_update)
             self.search_thread.start()
 
         if btnName == "pb_select_batch":
             options = QFileDialog.Options()
-            file_path, _ = QFileDialog.getOpenFileName(self, "选择文件", "", "所有文件 (*);;文本文件 (*.txt)", options=options)
+            file_path, _ = QFileDialog.getOpenFileName(self, "选择 XLSX 文件", "", "Excel Files (*.xlsx);;All Files (*)", options=options)
 
             # 如果用户选择了文件，则更新标签显示文件路径
             if file_path:
@@ -240,7 +252,7 @@ class MainWindow(QMainWindow):
             金保个人信息: {dic.get('cb_status')}
             """
             self.ui.tb_batch.setPlainText(text)
-            self.work = MainWorker(dic)
+            self.work = MainWorker(dic, self.ini_path, self.template_excel)
             self.work.run_ready.connect(self.run_result)
             self.work.start()
         
@@ -254,6 +266,15 @@ class MainWindow(QMainWindow):
             if folder_path:
                 self.Login.set_ini("Path", {"download": folder_path})
                 self.ui.le_path_set.setText(folder_path)
+        
+        if btnName == "pb_choose_set_2":
+            options = QFileDialog.Options()
+            # 打开文件选择对话框，过滤器只显示 .exe 文件
+            file_path, _ = QFileDialog.getOpenFileName(self, "选择 EXE 文件", "", "Executable Files (*.exe);;All Files (*)", options=options)
+            
+            if file_path:
+                self.Login.set_ini("Path", {"exe": file_path})
+                self.ui.le_path_set_2.setText(file_path)
         
         if btnName == "pb_submit_set2":
             self.Login.set_ini("Host", {"host": self.ui.le_jb_set.text(), "jb_host": self.ui.le_JB_set.text()})
@@ -282,6 +303,10 @@ class MainWindow(QMainWindow):
             messbox.setWindowTitle("登录错误")
             messbox.setText(error)
             messbox.exec()
+    
+    def vpn_res(self, result):
+        print(result)
+        self.ui.pb_vpn_login.setEnabled(True)
     
     def table_update(self, dic):
         table_dic = {
@@ -347,6 +372,7 @@ class MainWindow(QMainWindow):
         self.ui.le_path_set.setText(res_dic.get('path'))
         self.ui.le_jb_set.setText(res_dic.get('host'))
         self.ui.le_JB_set.setText(res_dic.get('jb_host'))
+        self.ui.le_path_set_2.setText(res_dic.get('exe'))
     
     def set_column_widths(self):
         for i, v in enumerate([145, 50, 50, 50, 85, 130, 75, 75, 95, 75, 60, 75, 85]):

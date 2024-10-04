@@ -12,15 +12,17 @@ import re, os, aiohttp, configparser
 
 class Base_Class:
 
-    def __init__(self):
+    def __init__(self, ini_path, template_excel):
         self.session = None
         self.bh = 0
         config = configparser.ConfigParser()
-        config.read(os.path.join(os.path.dirname(__file__), 'config.ini'))
+        config.read(ini_path)
+        self.base_path = ini_path
         self.JB_host = 'http://' + config.get('Host', 'jb_host')
         self.host = 'http://' + config.get('Host', 'host')
         out_path = config.get('Path', 'download')
         self.out_path = out_path if os.path.exists(out_path) else os.path.join(os.environ['USERPROFILE'], 'Desktop')
+        self.template_excel = template_excel
         self.dic = Dict
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',

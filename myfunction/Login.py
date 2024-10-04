@@ -8,10 +8,10 @@ import requests, time, os, configparser
 
 class Login:
 
-    def __init__(self) -> None:
+    def __init__(self, path) -> None:
         self.config = configparser.ConfigParser()
-        self.path = os.path.join(os.path.dirname(__file__), 'config.ini')
-        self.config.read(self.path)
+        self.path = path
+        self.config.read(path)
         self.host = 'http://' + self.config.get('Host', 'jb_host')
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6261.95 Safari/537.36"
@@ -81,7 +81,7 @@ class Login:
                 with open(self.path, 'w') as configfile:
                     self.config.write(configfile)
                 self.headers.update({'Access-Token': token})
-                name = name if name else self.config.get('Info', 'name')
+                name = name if name else self.config.get('Info', 'username')
                 # print(f'{name}登录成功')
                 origin = self.get_origin()
                 user = self.query_user()
@@ -90,8 +90,10 @@ class Login:
                 print('登录失败')
                 print(dic)
                 print(f'r:{r}')
+                return '未知', '未知'
         else:
             print("登录失败")
+            return '未知', '未知'
 
     def get_origin(self):
         res = requests.post(url=self.host + '/user/s9010202/entrydatagrid', headers=self.headers)
@@ -119,6 +121,7 @@ class Login:
             "path": self.config.get('Path', 'download'),
             "host": self.config.get('Host', 'host'),
             "jb_host": self.config.get('Host', 'jb_host'),
+            "exe": self.config.get('Path', 'exe')
         }
         return dic
     
