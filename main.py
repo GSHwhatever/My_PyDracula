@@ -247,12 +247,9 @@ class MainWindow(QMainWindow):
             身份证号所在列: {dic.get('col')}
             起始行: {dic.get('start_row')}
             结束行: {dic.get('end_row')}
-            经办端保险: {dic.get('jb_status')}
-            金保台账: {dic.get('tz_status')}
-            金保个人信息: {dic.get('cb_status')}
             """
             self.ui.tb_batch.setPlainText(text)
-            self.work = MainWorker(dic, self.ini_path, self.template_excel)
+            self.work = JQWorker(dic, self.ini_path, self.template_excel)
             self.work.run_ready.connect(self.run_result)
             self.work.start()
         

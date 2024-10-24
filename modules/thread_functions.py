@@ -22,7 +22,7 @@ class LoginWorker(QThread):
         finally:
             self.result_ready.emit(user, origin, error)
 
-class MainWorker(QThread):
+class JQWorker(QThread):
 
     run_ready = Signal(str)
 
@@ -31,6 +31,26 @@ class MainWorker(QThread):
         self.dic = dic
         self.ini_path = ini_path
         self.template_excel = template_excel
+        self.jq = RL(ini_path, template_excel)
+    
+    async def do(self, ids):
+        monitor = asyncio.create_task(self.monitor_tasks())
+        await self.jq.init_session()
+        await self.jq.run_first(ids)
+        # ic(self.result_dic)
+        await self.jq.close_session()
+        monitor.cancel()
+        try:
+            await monitor
+        except asyncio.CancelledError:
+            pass
+    
+    async def monitor_tasks(self):
+        while True:
+            # 获取当前事件循环中的所有任务
+            tasks = asyncio.all_tasks()
+            print(f'Current number of running tasks: {len(tasks)}')
+            await asyncio.sleep(1)  # 每秒检查一次
     
     def read_excel(self, path, col_tag="A", part=None, sheet=None):
         B = Base_Class(self.ini_path, self.template_excel)
@@ -42,24 +62,18 @@ class MainWorker(QThread):
         
     def run(self):
         try:
-            lis = self.read_excel(path=self.dic.get('path'), col_tag=self.dic.get('col'), part=f"{self.dic.get('start_row')},{self.dic.get('end_row')}", sheet=self.dic.get('sheet'))
+            ids = self.read_excel(path=self.dic.get('path'), col_tag=self.dic.get('col'), part=f"{self.dic.get('start_row')},{self.dic.get('end_row')}", sheet=self.dic.get('sheet'))
         except Exception as E:
             self.run_ready.emit(E)
         else:
-            try:
-                if self.dic.get('jb_status'):
-                    jb = RL(self.ini_path, self.template_excel)
-                    jb.main(lis)
-                if self.dic.get('tz_status'):
-                    tz = JB(self.ini_path, self.template_excel)
-                    tz.main(lis)
-                if self.dic.get('cb_status'):
-                    cb = JC_Query(self.ini_path, self.template_excel)
-                    cb.main(lis)
-            except Exception as E:
-                self.run_ready.emit(E)
+            if os.path.exists(self.jq.out_path):
+                asyncio.run(self.do(ids))
+                _ = [self.jq.save_result(self.jq.result_dic.get(id)) for id in ids]
+                self.jq.Reset.reset(self.jq.ws)
+                self.jq.Reset.reset(self.jq.ws_first)
+                self.jq.wb.save(os.path.join(self.jq.out_path, f'个人信息查询结果{time.strftime("%Y-%m-%d")}.xlsx'))
             else:
-                self.run_ready.emit('导出完成')
+                print(f'检查输出路径:{self.jq.out_path}')
 
 
 class SearchWorker(QThread):
