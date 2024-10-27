@@ -26,6 +26,7 @@ class RL(Base_Class):
         self.ws_first = self.wb['实名制缩略表']
         self.result_dic = {}
         self.Reset = Reset()
+        self.task_num = 0
 
     async def req_jb_message(self, id_num):
         payload = {
@@ -168,6 +169,7 @@ class RL(Base_Class):
     
     async def run_first(self, ids):
         tasks = [self.req_jb_message(id) for id in ids]
+        self.task_num += len(tasks)
         await asyncio.gather(*tasks)
 
     async def run(self, ids):

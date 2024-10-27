@@ -14,6 +14,7 @@ class LoginWorker(QThread):
         self.idcard = idcard
 
     def run(self):
+        # 金保登录，返回机构和用户信息
         try:
             user, origin, error = self.L.main(name=self.name, idcard=self.idcard)
         except Exception as E:
@@ -22,9 +23,39 @@ class LoginWorker(QThread):
         finally:
             self.result_ready.emit(user, origin, error)
 
+class SearchWorker(QThread):
+
+    search_result = Signal(dict)
+
+    def __init__(self, idcard, ini_path, template_excel) -> None:
+        super().__init__()
+        self.idcard = idcard
+        self.ini_path = ini_path
+        self.template_excel = template_excel
+
+    def run(self):
+        # 金保个人信息查询，返回具体数据
+        cb = JC_Query(self.ini_path, self.template_excel)
+        dic = cb.search(self.idcard)
+        data = dic.get(self.idcard)
+        self.search_result.emit(data)
+
+class VPNWorker(QThread):
+    
+    vpn_result = Signal(int)
+
+    def __init__(self, path) -> None:
+        super().__init__()
+        self.path = path
+
+    def run(self):
+        res = subprocess.Popen(self.path, shell=True)
+        res.wait()
+        self.vpn_result.emit(res.returncode)
+
 class JQWorker(QThread):
 
-    run_ready = Signal(str)
+    run_ready = Signal(int)
 
     def __init__(self, dic, ini_path, template_excel) -> None:
         super().__init__()
@@ -50,6 +81,11 @@ class JQWorker(QThread):
             # 获取当前事件循环中的所有任务
             tasks = asyncio.all_tasks()
             print(f'Current number of running tasks: {len(tasks)}')
+            num = (self.jq.task_num - len(tasks)) * 100 // self.jq.task_num
+            print(f'{self.jq.task_num}-{num}')
+            self.run_ready.emit(num)
+            if len(tasks) == 0:
+                break
             await asyncio.sleep(1)  # 每秒检查一次
     
     def read_excel(self, path, col_tag="A", part=None, sheet=None):
@@ -64,7 +100,8 @@ class JQWorker(QThread):
         try:
             ids = self.read_excel(path=self.dic.get('path'), col_tag=self.dic.get('col'), part=f"{self.dic.get('start_row')},{self.dic.get('end_row')}", sheet=self.dic.get('sheet'))
         except Exception as E:
-            self.run_ready.emit(E)
+            print(E)
+            self.run_ready.emit(0)
         else:
             if os.path.exists(self.jq.out_path):
                 asyncio.run(self.do(ids))
@@ -75,32 +112,3 @@ class JQWorker(QThread):
             else:
                 print(f'检查输出路径:{self.jq.out_path}')
 
-
-class SearchWorker(QThread):
-
-    search_result = Signal(dict)
-
-    def __init__(self, idcard, ini_path, template_excel) -> None:
-        super().__init__()
-        self.idcard = idcard
-        self.ini_path = ini_path
-        self.template_excel = template_excel
-
-    def run(self):
-        cb = JC_Query(self.ini_path, self.template_excel)
-        dic = cb.search(self.idcard)
-        data = dic.get(self.idcard)
-        self.search_result.emit(data)
-
-class VPNWorker(QThread):
-    
-    vpn_result = Signal(int)
-
-    def __init__(self, path) -> None:
-        super().__init__()
-        self.path = path
-
-    def run(self):
-        res = subprocess.Popen(self.path, shell=True)
-        res.wait()
-        self.vpn_result.emit(res.returncode)

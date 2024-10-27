@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainFPBMOu.ui'
+## Form generated from reading UI file 'mainOjkujW.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -16,9 +16,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QCheckBox,
-    QFrame, QGridLayout, QHBoxLayout, QHeaderView,
-    QLabel, QLineEdit, QMainWindow, QPushButton,
-    QSizePolicy, QStackedWidget, QTabWidget, QTableWidget,
+    QComboBox, QFrame, QGridLayout, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QProgressBar, QPushButton, QScrollArea, QSizePolicy,
+    QSpacerItem, QStackedWidget, QTabWidget, QTableWidget,
     QTableWidgetItem, QTextBrowser, QTextEdit, QVBoxLayout,
     QWidget)
 import resources_rc
@@ -27,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 720)
+        MainWindow.resize(1280, 729)
         MainWindow.setMinimumSize(QSize(940, 560))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
@@ -1053,72 +1054,218 @@ class Ui_MainWindow(object):
         self.widget = QWidget(self.login)
         self.widget.setObjectName(u"widget")
         self.widget.setGeometry(QRect(0, 0, 1181, 611))
-        self.frame = QFrame(self.widget)
+        self.horizontalLayoutWidget = QWidget(self.widget)
+        self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
+        self.horizontalLayoutWidget.setGeometry(QRect(150, 210, 911, 321))
+        self.horizontalLayout_6 = QHBoxLayout(self.horizontalLayoutWidget)
+        self.horizontalLayout_6.setSpacing(10)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.frame_6 = QFrame(self.horizontalLayoutWidget)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayoutWidget = QWidget(self.frame_6)
+        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
+        self.verticalLayoutWidget.setGeometry(QRect(10, 10, 411, 281))
+        self.verticalLayout_17 = QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
+        self.frame = QFrame(self.verticalLayoutWidget)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(280, 210, 421, 241))
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
-        self.lb_idcard_login = QLabel(self.frame)
+        self.horizontalLayoutWidget_2 = QWidget(self.frame)
+        self.horizontalLayoutWidget_2.setObjectName(u"horizontalLayoutWidget_2")
+        self.horizontalLayoutWidget_2.setGeometry(QRect(10, 10, 381, 61))
+        self.horizontalLayout_9 = QHBoxLayout(self.horizontalLayoutWidget_2)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.horizontalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.lb_idcard_login = QLabel(self.horizontalLayoutWidget_2)
         self.lb_idcard_login.setObjectName(u"lb_idcard_login")
-        self.lb_idcard_login.setGeometry(QRect(0, 30, 101, 41))
-        self.le_name_login = QLineEdit(self.frame)
-        self.le_name_login.setObjectName(u"le_name_login")
-        self.le_name_login.setGeometry(QRect(110, 90, 300, 50))
-        self.le_name_login.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-        self.le_idcard_login = QLineEdit(self.frame)
+
+        self.horizontalLayout_9.addWidget(self.lb_idcard_login)
+
+        self.le_idcard_login = QLineEdit(self.horizontalLayoutWidget_2)
         self.le_idcard_login.setObjectName(u"le_idcard_login")
-        self.le_idcard_login.setGeometry(QRect(110, 20, 300, 50))
         self.le_idcard_login.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-        self.lb_name_login = QLabel(self.frame)
+
+        self.horizontalLayout_9.addWidget(self.le_idcard_login)
+
+
+        self.verticalLayout_17.addWidget(self.frame)
+
+        self.frame_4 = QFrame(self.verticalLayoutWidget)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayoutWidget_3 = QWidget(self.frame_4)
+        self.horizontalLayoutWidget_3.setObjectName(u"horizontalLayoutWidget_3")
+        self.horizontalLayoutWidget_3.setGeometry(QRect(10, 10, 381, 61))
+        self.horizontalLayout_11 = QHBoxLayout(self.horizontalLayoutWidget_3)
+        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_2 = QSpacerItem(28, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_11.addItem(self.horizontalSpacer_2)
+
+        self.lb_name_login = QLabel(self.horizontalLayoutWidget_3)
         self.lb_name_login.setObjectName(u"lb_name_login")
-        self.lb_name_login.setGeometry(QRect(10, 100, 91, 31))
-        self.pb_login_login = QPushButton(self.frame)
+
+        self.horizontalLayout_11.addWidget(self.lb_name_login)
+
+        self.le_name_login = QLineEdit(self.horizontalLayoutWidget_3)
+        self.le_name_login.setObjectName(u"le_name_login")
+        self.le_name_login.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+
+        self.horizontalLayout_11.addWidget(self.le_name_login)
+
+
+        self.verticalLayout_17.addWidget(self.frame_4)
+
+        self.frame_5 = QFrame(self.verticalLayoutWidget)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayoutWidget_6 = QWidget(self.frame_5)
+        self.horizontalLayoutWidget_6.setObjectName(u"horizontalLayoutWidget_6")
+        self.horizontalLayoutWidget_6.setGeometry(QRect(10, 10, 381, 61))
+        self.horizontalLayout_12 = QHBoxLayout(self.horizontalLayoutWidget_6)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.pb_login_login = QPushButton(self.horizontalLayoutWidget_6)
         self.pb_login_login.setObjectName(u"pb_login_login")
-        self.pb_login_login.setGeometry(QRect(300, 170, 100, 40))
         self.pb_login_login.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        self.pb_rc_login = QPushButton(self.frame)
+
+        self.horizontalLayout_12.addWidget(self.pb_login_login)
+
+        self.horizontalSpacer = QSpacerItem(60, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_12.addItem(self.horizontalSpacer)
+
+        self.pb_rc_login = QPushButton(self.horizontalLayoutWidget_6)
         self.pb_rc_login.setObjectName(u"pb_rc_login")
-        self.pb_rc_login.setGeometry(QRect(110, 170, 100, 40))
         self.pb_rc_login.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        self.frame_2 = QFrame(self.widget)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setGeometry(QRect(490, 60, 201, 101))
-        self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
-        self.lb_title_login = QLabel(self.frame_2)
-        self.lb_title_login.setObjectName(u"lb_title_login")
-        self.lb_title_login.setGeometry(QRect(10, 0, 181, 91))
-        self.frame_3 = QFrame(self.widget)
-        self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setGeometry(QRect(820, 100, 341, 161))
-        self.frame_3.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
-        self.le_user_login = QLineEdit(self.frame_3)
+
+        self.horizontalLayout_12.addWidget(self.pb_rc_login)
+
+
+        self.verticalLayout_17.addWidget(self.frame_5)
+
+        self.frame_10 = QFrame(self.frame_6)
+        self.frame_10.setObjectName(u"frame_10")
+        self.frame_10.setGeometry(QRect(450, 0, 451, 319))
+        self.frame_10.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_10.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayoutWidget_3 = QWidget(self.frame_10)
+        self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
+        self.verticalLayoutWidget_3.setGeometry(QRect(10, 10, 391, 281))
+        self.verticalLayout_23 = QVBoxLayout(self.verticalLayoutWidget_3)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.frame_8 = QFrame(self.verticalLayoutWidget_3)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayoutWidget_4 = QWidget(self.frame_8)
+        self.horizontalLayoutWidget_4.setObjectName(u"horizontalLayoutWidget_4")
+        self.horizontalLayoutWidget_4.setGeometry(QRect(10, 10, 369, 61))
+        self.horizontalLayout_14 = QHBoxLayout(self.horizontalLayoutWidget_4)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.lb_user_login = QLabel(self.horizontalLayoutWidget_4)
+        self.lb_user_login.setObjectName(u"lb_user_login")
+
+        self.horizontalLayout_14.addWidget(self.lb_user_login)
+
+        self.le_user_login = QLineEdit(self.horizontalLayoutWidget_4)
         self.le_user_login.setObjectName(u"le_user_login")
         self.le_user_login.setEnabled(True)
-        self.le_user_login.setGeometry(QRect(50, 70, 281, 30))
         self.le_user_login.setStyleSheet(u"background-color: rgb(33, 37, 43);")
         self.le_user_login.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.le_user_login.setReadOnly(True)
-        self.le_origin_login = QLineEdit(self.frame_3)
+
+        self.horizontalLayout_14.addWidget(self.le_user_login)
+
+
+        self.verticalLayout_23.addWidget(self.frame_8)
+
+        self.frame_7 = QFrame(self.verticalLayoutWidget_3)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayoutWidget_9 = QWidget(self.frame_7)
+        self.horizontalLayoutWidget_9.setObjectName(u"horizontalLayoutWidget_9")
+        self.horizontalLayoutWidget_9.setGeometry(QRect(10, 10, 369, 61))
+        self.horizontalLayout_19 = QHBoxLayout(self.horizontalLayoutWidget_9)
+        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
+        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
+        self.lb_origin_login = QLabel(self.horizontalLayoutWidget_9)
+        self.lb_origin_login.setObjectName(u"lb_origin_login")
+
+        self.horizontalLayout_19.addWidget(self.lb_origin_login)
+
+        self.le_origin_login = QLineEdit(self.horizontalLayoutWidget_9)
         self.le_origin_login.setObjectName(u"le_origin_login")
         self.le_origin_login.setEnabled(True)
-        self.le_origin_login.setGeometry(QRect(50, 110, 281, 30))
         self.le_origin_login.setStyleSheet(u"background-color: rgb(33, 37, 43);")
         self.le_origin_login.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.le_origin_login.setReadOnly(True)
-        self.lb_origin_login = QLabel(self.frame_3)
-        self.lb_origin_login.setObjectName(u"lb_origin_login")
-        self.lb_origin_login.setGeometry(QRect(0, 110, 53, 30))
-        self.lb_statue_login = QLabel(self.frame_3)
-        self.lb_statue_login.setObjectName(u"lb_statue_login")
-        self.lb_statue_login.setGeometry(QRect(10, 20, 100, 40))
-        self.lb_user_login = QLabel(self.frame_3)
-        self.lb_user_login.setObjectName(u"lb_user_login")
-        self.lb_user_login.setGeometry(QRect(0, 70, 53, 30))
-        self.pb_vpn_login = QPushButton(self.widget)
+
+        self.horizontalLayout_19.addWidget(self.le_origin_login)
+
+
+        self.verticalLayout_23.addWidget(self.frame_7)
+
+        self.frame_3 = QFrame(self.verticalLayoutWidget_3)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
+        self.horizontalLayoutWidget_11 = QWidget(self.frame_3)
+        self.horizontalLayoutWidget_11.setObjectName(u"horizontalLayoutWidget_11")
+        self.horizontalLayoutWidget_11.setGeometry(QRect(10, 10, 371, 58))
+        self.horizontalLayout_21 = QHBoxLayout(self.horizontalLayoutWidget_11)
+        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
+        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_4 = QSpacerItem(125, 56, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_21.addItem(self.horizontalSpacer_4)
+
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_21.addItem(self.horizontalSpacer_6)
+
+        self.pb_vpn_login = QPushButton(self.horizontalLayoutWidget_11)
         self.pb_vpn_login.setObjectName(u"pb_vpn_login")
-        self.pb_vpn_login.setGeometry(QRect(870, 350, 201, 61))
+
+        self.horizontalLayout_21.addWidget(self.pb_vpn_login)
+
+        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_21.addItem(self.horizontalSpacer_5)
+
+
+        self.verticalLayout_23.addWidget(self.frame_3)
+
+
+        self.horizontalLayout_6.addWidget(self.frame_6)
+
+        self.frame_2 = QFrame(self.widget)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setGeometry(QRect(150, 70, 281, 80))
+        self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_7 = QLabel(self.frame_2)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setGeometry(QRect(10, 0, 251, 71))
+        self.frame_9 = QFrame(self.widget)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setGeometry(QRect(600, 70, 281, 80))
+        self.frame_9.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_8 = QLabel(self.frame_9)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setGeometry(QRect(10, 0, 251, 71))
         self.stackedWidget.addWidget(self.login)
         self.search = QWidget()
         self.search.setObjectName(u"search")
@@ -1197,6 +1344,8 @@ class Ui_MainWindow(object):
         self.tableWidget.setVerticalHeaderItem(4, __qtablewidgetitem17)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setGeometry(QRect(0, 0, 1151, 421))
+        self.tableWidget.setStyleSheet(u"background-color: rgb(33, 37, 43);\n"
+"alternate-background-color: rgb(255, 255, 255);")
         self.tableWidget.setRowCount(5)
         self.tableWidget.setColumnCount(13)
         self.tableWidget.verticalHeader().setDefaultSectionSize(40)
@@ -1527,7 +1676,7 @@ class Ui_MainWindow(object):
         self.lb_file_batch.setGeometry(QRect(260, 120, 61, 31))
         self.pb_select_batch = QPushButton(self.batch)
         self.pb_select_batch.setObjectName(u"pb_select_batch")
-        self.pb_select_batch.setGeometry(QRect(784, 170, 71, 31))
+        self.pb_select_batch.setGeometry(QRect(750, 120, 71, 31))
         self.le_input_batch = QLineEdit(self.batch)
         self.le_input_batch.setObjectName(u"le_input_batch")
         self.le_input_batch.setGeometry(QRect(330, 120, 401, 31))
@@ -1582,28 +1731,35 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.le_endrow_batch, 1, 3, 1, 1)
 
-        self.tb_batch = QTextBrowser(self.batch)
-        self.tb_batch.setObjectName(u"tb_batch")
-        self.tb_batch.setGeometry(QRect(260, 270, 471, 251))
-        self.tb_batch.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-        self.cb_jbbx = QCheckBox(self.batch)
-        self.cb_jbbx.setObjectName(u"cb_jbbx")
-        self.cb_jbbx.setGeometry(QRect(790, 210, 141, 41))
-        self.cb_jbbx.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-        self.cb_jbtz = QCheckBox(self.batch)
-        self.cb_jbtz.setObjectName(u"cb_jbtz")
-        self.cb_jbtz.setGeometry(QRect(790, 260, 141, 41))
-        self.cb_jbtz.setStyleSheet(u"background-color: rgb(33, 37, 43);")
-        self.cb_jbinfo = QCheckBox(self.batch)
-        self.cb_jbinfo.setObjectName(u"cb_jbinfo")
-        self.cb_jbinfo.setGeometry(QRect(790, 310, 141, 41))
-        self.cb_jbinfo.setStyleSheet(u"background-color: rgb(33, 37, 43);")
         self.lb_title_batch = QLabel(self.batch)
         self.lb_title_batch.setObjectName(u"lb_title_batch")
         self.lb_title_batch.setGeometry(QRect(380, 20, 411, 61))
         self.pb_run_batch = QPushButton(self.batch)
         self.pb_run_batch.setObjectName(u"pb_run_batch")
-        self.pb_run_batch.setGeometry(QRect(860, 170, 71, 31))
+        self.pb_run_batch.setGeometry(QRect(750, 220, 71, 31))
+        self.scrollArea = QScrollArea(self.batch)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setGeometry(QRect(260, 270, 571, 251))
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 569, 249))
+        self.tb_batch = QTextBrowser(self.scrollAreaWidgetContents)
+        self.tb_batch.setObjectName(u"tb_batch")
+        self.tb_batch.setGeometry(QRect(0, 0, 571, 251))
+        self.tb_batch.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.progressBar = QProgressBar(self.batch)
+        self.progressBar.setObjectName(u"progressBar")
+        self.progressBar.setGeometry(QRect(270, 540, 561, 23))
+        self.progressBar.setValue(0)
+        self.comboBox = QComboBox(self.batch)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setGeometry(QRect(740, 170, 161, 31))
+        self.comboBox.setEditable(False)
         self.stackedWidget.addWidget(self.batch)
         self.set = QWidget()
         self.set.setObjectName(u"set")
@@ -2226,8 +2382,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(3)
         self.ryjb_info.setCurrentIndex(0)
+        self.comboBox.setCurrentIndex(-1)
         self.stackedWidget_2.setCurrentIndex(4)
 
 
@@ -2291,15 +2448,15 @@ class Ui_MainWindow(object):
         self.lb_name_login.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">\u59d3\u540d</span></p></body></html>", None))
         self.pb_login_login.setText(QCoreApplication.translate("MainWindow", u"\u767b\u5f55", None))
         self.pb_rc_login.setText(QCoreApplication.translate("MainWindow", u"\u8bfb\u53d6\u914d\u7f6e", None))
-        self.lb_title_login.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:48pt; font-weight:700;\">\u767b\u5f55</span></p></body></html>", None))
+        self.lb_user_login.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">\u7528\u6237</span></p></body></html>", None))
         self.le_user_login.setText(QCoreApplication.translate("MainWindow", u"\u672a\u77e5", None))
         self.le_user_login.setPlaceholderText("")
+        self.lb_origin_login.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">\u673a\u6784</span></p></body></html>", None))
         self.le_origin_login.setText(QCoreApplication.translate("MainWindow", u"\u672a\u77e5", None))
         self.le_origin_login.setPlaceholderText("")
-        self.lb_origin_login.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">\u673a\u6784</span></p></body></html>", None))
-        self.lb_statue_login.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:700;\">\u767b\u5f55\u72b6\u6001\uff1a</span></p></body></html>", None))
-        self.lb_user_login.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">\u7528\u6237</span></p></body></html>", None))
         self.pb_vpn_login.setText(QCoreApplication.translate("MainWindow", u"\u4e00\u952e\u767b\u5f55\u5c0f\u98de\u673a", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; font-weight:700;\">\u767b\u5f55</span></p></body></html>", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">\u72b6\u6001</span></p></body></html>", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:28pt; font-weight:700;\">\u4e2a\u4eba\u57fa\u7840\u4fe1\u606f\u67e5\u8be2</span></p></body></html>", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">\u8eab\u4efd\u8bc1\u53f7</span></p></body></html>", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u67e5\u8be2", None))
@@ -2587,11 +2744,14 @@ class Ui_MainWindow(object):
         self.le_startrow_batch.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u8d77\u59cb\u884c\uff0c\u9ed8\u8ba4\u7b2c\u4e00\u884c", None))
         self.lb_endrow_batch.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:11pt; font-weight:700;\">\u5c3e\u884c</span></p></body></html>", None))
         self.le_endrow_batch.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u7ed3\u675f\u884c\uff0c\u9ed8\u8ba4\u6570\u636e\u6700\u540e\u4e00\u884c", None))
-        self.cb_jbbx.setText(QCoreApplication.translate("MainWindow", u"\u7ecf\u529e\u7aef\u4fdd\u9669", None))
-        self.cb_jbtz.setText(QCoreApplication.translate("MainWindow", u"\u91d1\u4fdd\u53f0\u8d26", None))
-        self.cb_jbinfo.setText(QCoreApplication.translate("MainWindow", u"\u91d1\u4fdd\u4e2a\u4eba\u57fa\u672c\u4fe1\u606f", None))
         self.lb_title_batch.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; font-weight:700;\">\u6279\u91cf\u5bfc\u51fa\u67e5\u8be2\u7ed3\u679c</span></p></body></html>", None))
         self.pb_run_batch.setText(QCoreApplication.translate("MainWindow", u"\u5bfc\u51fa", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"\u7ecf\u529e\u7aef\u53c2\u4fdd\u60c5\u51b5", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"\u91d1\u4fdd\u53f0\u8d26\u8be6\u60c5", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"\u91d1\u4fdd\u4e2a\u4eba\u57fa\u672c\u4fe1\u606f", None))
+
+        self.comboBox.setCurrentText("")
+        self.comboBox.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u67e5\u8be2\u9879\u76ee", None))
         self.lb_title_set.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:36pt; font-weight:700;\">\u8bbe\u7f6e</span></p></body></html>", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:700;\">\u914d\u7f6e\u767b\u5f55\u4fe1\u606f\uff1a</span></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:700;\">\u8eab\u4efd\u8bc1\u53f7</span></p></body></html>", None))

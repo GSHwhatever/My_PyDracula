@@ -236,10 +236,7 @@ class MainWindow(QMainWindow):
                 "sheet": self.ui.le_sheet_batch.text(),
                 "col": self.ui.le_colum_batch.text(),
                 "start_row": self.ui.le_startrow_batch.text(),
-                "end_row": self.ui.le_endrow_batch.text(),
-                "jb_status": self.ui.cb_jbbx.isChecked(),
-                "tz_status": self.ui.cb_jbtz.isChecked(),
-                "cb_status": self.ui.cb_jbinfo.isChecked()
+                "end_row": self.ui.le_endrow_batch.text()
             }
             text = f"""
             文件位置: {dic.get('path')}
@@ -249,6 +246,8 @@ class MainWindow(QMainWindow):
             结束行: {dic.get('end_row')}
             """
             self.ui.tb_batch.setPlainText(text)
+            self.ui.progressBar.setValue(0)
+            print(self.ui.comboBox.currentIndex())
             self.work = JQWorker(dic, self.ini_path, self.template_excel)
             self.work.run_ready.connect(self.run_result)
             self.work.start()
@@ -336,11 +335,9 @@ class MainWindow(QMainWindow):
             # print("当前每列的宽度:", widths)
 
     
-    def run_result(self, result):
-        messbox = QMessageBox()
-        messbox.setWindowTitle("导出结果")
-        messbox.setText(result)
-        messbox.exec()
+    def run_result(self, num):
+        print(f'run_result-{num}')
+        self.ui.progressBar.setValue(num)
 
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
