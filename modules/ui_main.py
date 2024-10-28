@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainOjkujW.ui'
+## Form generated from reading UI file 'mainDntjZa.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -1344,8 +1344,7 @@ class Ui_MainWindow(object):
         self.tableWidget.setVerticalHeaderItem(4, __qtablewidgetitem17)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setGeometry(QRect(0, 0, 1151, 421))
-        self.tableWidget.setStyleSheet(u"background-color: rgb(33, 37, 43);\n"
-"alternate-background-color: rgb(255, 255, 255);")
+        self.tableWidget.setStyleSheet(u"background: transparent;")
         self.tableWidget.setRowCount(5)
         self.tableWidget.setColumnCount(13)
         self.tableWidget.verticalHeader().setDefaultSectionSize(40)
@@ -1442,6 +1441,7 @@ class Ui_MainWindow(object):
         self.tableWidget_3.setVerticalHeaderItem(4, __qtablewidgetitem56)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
         self.tableWidget_3.setGeometry(QRect(0, 0, 1151, 421))
+        self.tableWidget_3.setStyleSheet(u"background: transparent;")
         self.tableWidget_3.horizontalHeader().setMinimumSectionSize(50)
         self.tableWidget_3.horizontalHeader().setDefaultSectionSize(125)
         self.tableWidget_3.verticalHeader().setMinimumSectionSize(30)
@@ -1501,6 +1501,7 @@ class Ui_MainWindow(object):
         self.tableWidget_4.setVerticalHeaderItem(4, __qtablewidgetitem76)
         self.tableWidget_4.setObjectName(u"tableWidget_4")
         self.tableWidget_4.setGeometry(QRect(0, 0, 1151, 421))
+        self.tableWidget_4.setStyleSheet(u"background: transparent;")
         self.tableWidget_4.verticalHeader().setMinimumSectionSize(25)
         self.tableWidget_4.verticalHeader().setDefaultSectionSize(40)
         self.ryjb_info.addTab(self.tab_3, "")
@@ -1554,6 +1555,7 @@ class Ui_MainWindow(object):
         self.tableWidget_5.setVerticalHeaderItem(4, __qtablewidgetitem94)
         self.tableWidget_5.setObjectName(u"tableWidget_5")
         self.tableWidget_5.setGeometry(QRect(0, 0, 1151, 431))
+        self.tableWidget_5.setStyleSheet(u"background: transparent;")
         self.tableWidget_5.horizontalHeader().setDefaultSectionSize(120)
         self.tableWidget_5.verticalHeader().setDefaultSectionSize(40)
         self.ryjb_info.addTab(self.tab_4, "")
@@ -1605,6 +1607,7 @@ class Ui_MainWindow(object):
         self.tableWidget_6.setVerticalHeaderItem(4, __qtablewidgetitem111)
         self.tableWidget_6.setObjectName(u"tableWidget_6")
         self.tableWidget_6.setGeometry(QRect(0, 0, 1151, 421))
+        self.tableWidget_6.setStyleSheet(u"background: transparent;")
         self.tableWidget_6.horizontalHeader().setDefaultSectionSize(110)
         self.tableWidget_6.verticalHeader().setDefaultSectionSize(40)
         self.ryjb_info.addTab(self.tab_5, "")
@@ -1662,6 +1665,7 @@ class Ui_MainWindow(object):
         self.tableWidget_7.setVerticalHeaderItem(4, __qtablewidgetitem131)
         self.tableWidget_7.setObjectName(u"tableWidget_7")
         self.tableWidget_7.setGeometry(QRect(0, 0, 1151, 421))
+        self.tableWidget_7.setStyleSheet(u"background: transparent;")
         self.tableWidget_7.horizontalHeader().setDefaultSectionSize(115)
         self.tableWidget_7.verticalHeader().setDefaultSectionSize(40)
         self.ryjb_info.addTab(self.tab_6, "")
@@ -1747,12 +1751,17 @@ class Ui_MainWindow(object):
         self.tb_batch = QTextBrowser(self.scrollAreaWidgetContents)
         self.tb_batch.setObjectName(u"tb_batch")
         self.tb_batch.setGeometry(QRect(0, 0, 571, 251))
-        self.tb_batch.setStyleSheet(u"background-color: rgb(33, 37, 43);")
+        self.tb_batch.setStyleSheet(u"background: transparent;")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.progressBar = QProgressBar(self.batch)
         self.progressBar.setObjectName(u"progressBar")
         self.progressBar.setGeometry(QRect(270, 540, 561, 23))
+        self.progressBar.setStyleSheet(u"background: transparent;")
         self.progressBar.setValue(0)
+        self.progressBar.setTextVisible(True)
+        self.progressBar.setOrientation(Qt.Orientation.Horizontal)
+        self.progressBar.setInvertedAppearance(False)
+        self.progressBar.setTextDirection(QProgressBar.Direction.TopToBottom)
         self.comboBox = QComboBox(self.batch)
         self.comboBox.addItem("")
         self.comboBox.addItem("")

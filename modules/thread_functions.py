@@ -1,6 +1,7 @@
 from PySide6.QtCore import QObject, QThread, Signal
+from concurrent.futures import ThreadPoolExecutor as Pool
 from myfunction import *
-import subprocess
+import subprocess, time
 
 
 class LoginWorker(QThread):
@@ -55,38 +56,16 @@ class VPNWorker(QThread):
 
 class JQWorker(QThread):
 
-    run_ready = Signal(int)
+    run_result = Signal(int)
+    run_message = Signal(str)
 
     def __init__(self, dic, ini_path, template_excel) -> None:
         super().__init__()
+        self.loop = asyncio.new_event_loop()
         self.dic = dic
         self.ini_path = ini_path
         self.template_excel = template_excel
         self.jq = RL(ini_path, template_excel)
-    
-    async def do(self, ids):
-        monitor = asyncio.create_task(self.monitor_tasks())
-        await self.jq.init_session()
-        await self.jq.run_first(ids)
-        # ic(self.result_dic)
-        await self.jq.close_session()
-        monitor.cancel()
-        try:
-            await monitor
-        except asyncio.CancelledError:
-            pass
-    
-    async def monitor_tasks(self):
-        while True:
-            # 获取当前事件循环中的所有任务
-            tasks = asyncio.all_tasks()
-            print(f'Current number of running tasks: {len(tasks)}')
-            num = (self.jq.task_num - len(tasks)) * 100 // self.jq.task_num
-            print(f'{self.jq.task_num}-{num}')
-            self.run_ready.emit(num)
-            if len(tasks) == 0:
-                break
-            await asyncio.sleep(1)  # 每秒检查一次
     
     def read_excel(self, path, col_tag="A", part=None, sheet=None):
         B = Base_Class(self.ini_path, self.template_excel)
@@ -95,20 +74,51 @@ class JQWorker(QThread):
             raise lis
         elif isinstance(lis, list):
             return lis
+    
+    async def main_run(self, ids):
+        await self.jq.init_session()
+        await self.jq.run_first(ids)
+        # ic(self.result_dic)
+        await self.jq.close_session()
+    
+    def main(self, ids):
+        self.loop.run_until_complete(self.main_run(ids))
+        self.loop.close()
+    
+    def monitor_tasks(self):
+        while True:
+            if self.jq.task_num:
+                time.sleep(1)
+                # 获取当前事件循环中的所有任务
+                if self.loop.is_closed():
+                    self.run_result.emit(100)
+                    break
+                else:
+                    tasks = len(asyncio.all_tasks(self.loop))
+                    print(f'剩余任务数量: {tasks}')
+                    num = (self.jq.task_num - tasks) * 100 // self.jq.task_num
+                    self.run_result.emit(num)
+                    
         
     def run(self):
         try:
             ids = self.read_excel(path=self.dic.get('path'), col_tag=self.dic.get('col'), part=f"{self.dic.get('start_row')},{self.dic.get('end_row')}", sheet=self.dic.get('sheet'))
         except Exception as E:
             print(E)
-            self.run_ready.emit(0)
+            self.run_message.emit(E)
         else:
             if os.path.exists(self.jq.out_path):
-                asyncio.run(self.do(ids))
+                start = time.time()
+                pool = Pool(max_workers=3)
+                pool.submit(self.monitor_tasks)
+                pool.submit(self.main, ids)
+                pool.shutdown(wait=True)
                 _ = [self.jq.save_result(self.jq.result_dic.get(id)) for id in ids]
                 self.jq.Reset.reset(self.jq.ws)
                 self.jq.Reset.reset(self.jq.ws_first)
                 self.jq.wb.save(os.path.join(self.jq.out_path, f'个人信息查询结果{time.strftime("%Y-%m-%d")}.xlsx'))
+                end = time.time()
+                self.run_message.emit(f'完成\n用时：{int((end - start) // 60)}分{round((end - start) % 60, 2)}秒')
             else:
-                print(f'检查输出路径:{self.jq.out_path}')
+                self.run_message.emit(f'检查输出路径:{self.jq.out_path}')
 
