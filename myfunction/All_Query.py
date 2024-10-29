@@ -90,10 +90,11 @@ class JC_Query(Base_Class):
             # ic(res)
             l2 = res.get('list', [])
             print(f"l2-{l2}")
-            lt = [i for i in l2 if i.get('aae100') == "1"]
-            l = lt
-            if l2:
-                l = [l2[0]] if filter else l2
+            if filter:
+                lt = [i for i in l2 if i.get('aae100') == "1"]
+                l = lt if lt else [l2[0]]
+            else:
+                l = l2
             lis = []
             print(f'l:{l}')
             for i, d in enumerate(l, 1):
@@ -151,10 +152,11 @@ class JC_Query(Base_Class):
         if status == 200:
             # ic(res)
             l2 = res.get('list', [])
-            lt = [i for i in l2 if i.get('aae100') == "1"]
-            l = lt
-            if l2:
-                l = [l2[0]] if filter else l2
+            if filter:
+                lt = [i for i in l2 if i.get('aae100') == "1"]
+                l = lt if lt else [l2[0]]
+            else:
+                l = l2
             lis = []
             for i, d in enumerate(l, 1):
                 dic =  {
