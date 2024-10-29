@@ -238,6 +238,8 @@ class MainWindow(QMainWindow):
                 "start_row": self.ui.le_startrow_batch.text(),
                 "end_row": self.ui.le_endrow_batch.text()
             }
+            tag_dic = {0: "sb", 1: "tz", 2: "gr"}
+            tag = tag_dic.get(self.ui.comboBox.currentIndex())
             text = f"""
             文件位置: {dic.get('path')}
             表名: {dic.get('sheet')}
@@ -248,7 +250,7 @@ class MainWindow(QMainWindow):
             self.ui.tb_batch.setPlainText(text)
             self.ui.progressBar.setValue(0)
             print(self.ui.comboBox.currentIndex())
-            self.work = JQWorker(dic, self.ini_path, self.template_excel)
+            self.work = DownloadWorker(tag, dic, self.ini_path, self.template_excel)
             self.work.run_result.connect(self.run_result)
             self.work.run_message.connect(self.run_message)
             self.work.start()
@@ -315,6 +317,9 @@ class MainWindow(QMainWindow):
             "zgzs_info": self.ui.tableWidget_7,
         }
         for key, table in table_dic.items():
+            for row in range(table.rowCount()):
+                for col in range(table.columnCount()):
+                    table.setItem(row, col, QTableWidgetItem(""))
             lis = dic.get(key)
             # print(lis)
             for r, d in enumerate(lis):

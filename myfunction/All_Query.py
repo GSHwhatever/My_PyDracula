@@ -25,6 +25,7 @@ class JC_Query(Base_Class):
         self.wb = load_workbook(path)
         self.wb._manual_calculation = True      # 禁止自动计算
         self.Reset = Reset()
+        self.task_num = 0
 
     def test(self):
         url = self.JB_host + '/user/menu/querydatagrid?businessID=23123232'
@@ -79,7 +80,7 @@ class JC_Query(Base_Class):
             ic(res)
             raise AuthError(message=res.get('msg'), code=status)
     
-    async def jydj_info(self, payload):
+    async def jydj_info(self, payload, filter=True):
         # 就业登记信息
         url = self.JB_host + '/hljjy/lpleaf6-employment/api/aa/b/b/queryVCc03Ac01jyPage?pageNo=1'
         async with self.session.post(url=url, json=payload) as result:
@@ -88,11 +89,13 @@ class JC_Query(Base_Class):
         if status == 200:
             # ic(res)
             l2 = res.get('list', [])
+            print(f"l2-{l2}")
             lt = [i for i in l2 if i.get('aae100') == "1"]
             l = lt
             if l2:
-                l = [l2[0]]
+                l = [l2[0]] if filter else l2
             lis = []
+            print(f'l:{l}')
             for i, d in enumerate(l, 1):
                 dic = {
                     "序号": i,
@@ -139,7 +142,7 @@ class JC_Query(Base_Class):
         else:
             raise AuthError(message=res.get('msg'), code=status)
 
-    async def sydj_info(self, payload):
+    async def sydj_info(self, payload, filter=True):
         # 失业登记信息
         url = self.JB_host + '/hljjy/lpleaf6-employment/api/aa/b/b/queryVCc02Ac01Page?pageNo=1'
         async with self.session.post(url=url, json=payload) as result:
@@ -151,7 +154,7 @@ class JC_Query(Base_Class):
             lt = [i for i in l2 if i.get('aae100') == "1"]
             l = lt
             if l2:
-                l = [l2[0]]
+                l = [l2[0]] if filter else l2
             lis = []
             for i, d in enumerate(l, 1):
                 dic =  {
@@ -180,7 +183,7 @@ class JC_Query(Base_Class):
         else:
             raise AuthError(message=res.get('msg'), code=status)
 
-    async def jycyz_info(self, payload):
+    async def jycyz_info(self, payload, filter=True):
         # 就业创业证信息
         url = self.JB_host + '/hljjy/lpleaf6-employment/api/aa/b/b/queryVCc0aAc01jyPage?pageNo=1'
         async with self.session.post(url=url, json=payload) as result:
@@ -188,30 +191,33 @@ class JC_Query(Base_Class):
             status = result.status
         if status == 200:
             # ic(res)
-            l = res.get('list', [])
+            l2 = res.get('list', [])
             lis = []
-            if l:
-                lt = [i for i in l if i.get('acc0a3') != '0' and i.get('aae100') == "1"]
-                lt = sorted(lt, key=lambda x: x.get('acc341', '').replace('-', ''), reverse=True)
-                d = lt[0] if lt else l[0]
-
-                dic =  {
-                    "序号":1,
-                    "身份证号": payload.get('aac002'),
-                    "姓名": payload.get('aac003'),
-                    "性别": self.dic.sex_dic.get(d.get('aac004'), d.get('aac004')),
-                    "证件申请类型": self.dic.sqlx.get(d.get('acc0a1'), d.get('acc0a1')),
-                    "就业创业证号码": d.get('aac021'),
-                    "原证件号码": "",
-                    "发放标记": self.dic.ffbj.get(d.get('acc0a3'), d.get('acc0a3')),
-                    "有效标记": self.dic.yxbs.get(d.get('aae100'), d.get('aae100')),
-                    "发放日期": d.get('acc341'),
-                    "发证机构": d.get('acc342'),
-                    "经办人": d.get('aae019'),
-                    "经办机构": d.get('aae020'),
-                    "经办日期": d.get('aae036', '')[:10],
-                }
-                lis.append(dic)
+            if l2:
+                if filter:
+                    lt = [i for i in l2 if i.get('acc0a3') != '0' and i.get('aae100') == "1"]
+                    lt = sorted(lt, key=lambda x: x.get('acc341', '').replace('-', ''), reverse=True)
+                    l = lt[0] if lt else l2[:1]
+                else:
+                    l = l2
+                for i, d in enumerate(l, 1):
+                    dic =  {
+                        "序号": i,
+                        "身份证号": payload.get('aac002'),
+                        "姓名": payload.get('aac003'),
+                        "性别": self.dic.sex_dic.get(d.get('aac004'), d.get('aac004')),
+                        "证件申请类型": self.dic.sqlx.get(d.get('acc0a1'), d.get('acc0a1')),
+                        "就业创业证号码": d.get('aac021'),
+                        "原证件号码": "",
+                        "发放标记": self.dic.ffbj.get(d.get('acc0a3'), d.get('acc0a3')),
+                        "有效标记": self.dic.yxbs.get(d.get('aae100'), d.get('aae100')),
+                        "发放日期": d.get('acc341'),
+                        "发证机构": d.get('acc342'),
+                        "经办人": d.get('aae019'),
+                        "经办机构": d.get('aae020'),
+                        "经办日期": d.get('aae036', '')[:10],
+                    }
+                    lis.append(dic)
             # ic(lis, sort_dicts=False)
             if not lis:
                 lis = [{"序号": 1, "身份证号": payload.get('aac002'), "姓名": payload.get('aac003'), "性别": "", "证件申请类型": "", "就业创业证号码": "无"}]
@@ -219,7 +225,7 @@ class JC_Query(Base_Class):
         else:
             raise AuthError(message=res.get('msg'), code=status)
 
-    async def knrd_info(self, payload):
+    async def knrd_info(self, payload, filter=True):
         # 就业困难人员认定信息
         url = self.JB_host + '/hljjy/lpleaf6-employment/api/aa/b/b/queryCc13Page?pageNo=1'
         async with self.session.post(url=url, json=payload) as result:
@@ -230,28 +236,32 @@ class JC_Query(Base_Class):
             data = res.get('data')
             if data:
                 yxbj = {'0': '否', '1': '是'}
-                l = data.get('list', [])
+                l2 = data.get('list', [])
                 lis = []
-                if l:
-                    lt = [i for i in l if i.get('aae100') == "1"]
-                    lt = sorted(lt, key=lambda x: x.get('acc361', '').replace('-', ''), reverse=True)
-                    d = lt[0] if lt else l[0]
-                    dic =  {
-                        "序号": 1,
-                        "社会保障号": payload.get('aac147'),
-                        "姓名": payload.get('aac003'),
-                        "证件号码": payload.get('aac002'),
-                        "性别": self.dic.sex_dic.get(d.get('aac004'), d.get('aac004')),
-                        "出生日期": d.get('aac006'),
-                        "住址": d.get('aae006'),
-                        "联系电话": d.get('aae139'),
-                        "人员类别": self.dic.rylb.get(d.get('aac027'), d.get('aac027')),
-                        "有效标记": yxbj.get(d.get('aae100'), d.get('aae100')),
-                        "就业援助对象类型": self.dic.rdlx.get(d.get('acc369'), d.get('acc369')),
-                        "就业援助对象认定时间": d.get('acc361'),
-                        "就业援助对象有效期开始时间": d.get('acc362')
-                    }
-                    lis.append(dic)
+                if l2:
+                    if filter:
+                        lt = [i for i in l2 if i.get('aae100') == "1"]
+                        lt = sorted(lt, key=lambda x: x.get('acc361', '').replace('-', ''), reverse=True)
+                        l = lt[0] if lt else l2[0]
+                    else:
+                        l = l2
+                    for i, d in enumerate(l, 1):
+                        dic =  {
+                            "序号": i,
+                            "社会保障号": payload.get('aac147'),
+                            "姓名": payload.get('aac003'),
+                            "证件号码": payload.get('aac002'),
+                            "性别": self.dic.sex_dic.get(d.get('aac004'), d.get('aac004')),
+                            "出生日期": d.get('aac006'),
+                            "住址": d.get('aae006'),
+                            "联系电话": d.get('aae139'),
+                            "人员类别": self.dic.rylb.get(d.get('aac027'), d.get('aac027')),
+                            "有效标记": yxbj.get(d.get('aae100'), d.get('aae100')),
+                            "就业援助对象类型": self.dic.rdlx.get(d.get('acc369'), d.get('acc369')),
+                            "就业援助对象认定时间": d.get('acc361'),
+                            "就业援助对象有效期开始时间": d.get('acc362')
+                        }
+                        lis.append(dic)
                 # ic(lis, sort_dicts=False)
                 if not lis:
                     lis = [{"序号": 1, "社会保障号": payload.get('aac147'), "姓名": payload.get('aac003'), "证件号码": payload.get('aac002'), "性别": "", "出生日期": "", "住址": "","联系电话": "", "人员类别": "", "有效标记":"否"}]
@@ -264,7 +274,7 @@ class JC_Query(Base_Class):
         # 暂不支持此功能
         pass
 
-    async def zgzs_info(self, payload):
+    async def zgzs_info(self, payload, filter=True):
         # 职业资格证书信息
         url = self.JB_host + '/hljjy/lpleaf6-employment/api/aa/b/b/queryProfessionalCertificate'
         async with self.session.post(url=url, json=payload) as result:
@@ -305,11 +315,12 @@ class JC_Query(Base_Class):
                         "级别": level.get(d.get("jndj", '').split('/')[-1].replace('技能', ''))
                     }
                     lis.append(dic)
-                ll = sorted(lis, key=lambda x:x.get("级别"), reverse=True)
-                if ll:
-                    ll_d = ll[0]
-                    ll_d.pop("级别")
-                    lis = [ll_d]
+                if filter:
+                    ll = sorted(lis, key=lambda x:x.get("级别"), reverse=True)
+                    if ll:
+                        ll_d = ll[0]
+                        ll_d.pop("级别")
+                        lis = [ll_d]
                 # ic(lis, sort_dicts=False)
                 if not lis:
                     lis = [{"序号": 1, "姓名": payload.get('aac003'), "证件号码": payload.get('aac002'), "性别": "", "职业工种名称": "", "职业方向": "", "技能等级": "",
@@ -338,24 +349,25 @@ class JC_Query(Base_Class):
 
     async def run_first(self, ids):
         tasks = [self.ryjb_info(id) for id in ids]
+        self.task_num += (len(tasks) * 6)
         results = await asyncio.gather(*tasks)
         return results
 
-    async def run_end(self, results):
+    async def run_end(self, results, filter):
         tasks = []
         for payload in results:
-            tasks.append(self.jydj_info(payload))
-            tasks.append(self.sydj_info(payload))
-            tasks.append(self.jycyz_info(payload))
-            tasks.append(self.knrd_info(payload))
-            tasks.append(self.zgzs_info(payload))
+            tasks.append(self.jydj_info(payload, filter))
+            tasks.append(self.sydj_info(payload, filter))
+            tasks.append(self.jycyz_info(payload, filter))
+            tasks.append(self.knrd_info(payload, filter))
+            tasks.append(self.zgzs_info(payload, filter))
         await asyncio.gather(*tasks)
 
-    async def run(self, ids):
+    async def run(self, ids, filter=True):
         monitor = asyncio.create_task(self.monitor_tasks())
         await self.init_session()
         result = await self.run_first(ids)
-        await self.run_end(result)
+        await self.run_end(result, filter)
         # ic(self.result_dic)
         await self.close_session()
         monitor.cancel()
@@ -390,7 +402,7 @@ class JC_Query(Base_Class):
             print(f'检查输出路径:{self.out_path}')
 
     def search(self, id):
-        asyncio.run(self.run([id]))
+        asyncio.run(self.run([id], filter=False))
         return self.result_dic
     
 

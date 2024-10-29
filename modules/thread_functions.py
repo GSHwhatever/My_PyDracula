@@ -54,18 +54,29 @@ class VPNWorker(QThread):
         res.wait()
         self.vpn_result.emit(res.returncode)
 
-class JQWorker(QThread):
+class DownloadWorker(QThread):
 
     run_result = Signal(int)
     run_message = Signal(str)
 
-    def __init__(self, dic, ini_path, template_excel) -> None:
+    def __init__(self, tag, dic, ini_path, template_excel) -> None:
         super().__init__()
+        self.tag = tag
         self.loop = asyncio.new_event_loop()
         self.dic = dic
         self.ini_path = ini_path
         self.template_excel = template_excel
-        self.jq = RL(ini_path, template_excel)
+        self.file_dic = {
+            "sb": "个人信息查询结果",
+            "tz": "台账查询结果",
+            "gr": "基础信息查询结果"
+        }
+        func_dic = {
+            "sb": RL(ini_path, template_excel),
+            "tz": JB(ini_path, template_excel),
+            "gr": JC_Query(ini_path, template_excel)
+        }
+        self.jq = func_dic.get(tag)
     
     def read_excel(self, path, col_tag="A", part=None, sheet=None):
         B = Base_Class(self.ini_path, self.template_excel)
@@ -77,8 +88,9 @@ class JQWorker(QThread):
     
     async def main_run(self, ids):
         await self.jq.init_session()
-        await self.jq.run_first(ids)
-        # ic(self.result_dic)
+        result = await self.jq.run_first(ids)
+        if self.tag in ('gr', 'tz'):
+            await self.jq.run_end(result)
         await self.jq.close_session()
     
     def main(self, ids):
@@ -101,24 +113,33 @@ class JQWorker(QThread):
                     
         
     def run(self):
-        try:
-            ids = self.read_excel(path=self.dic.get('path'), col_tag=self.dic.get('col'), part=f"{self.dic.get('start_row')},{self.dic.get('end_row')}", sheet=self.dic.get('sheet'))
-        except Exception as E:
-            print(E)
-            self.run_message.emit(E)
-        else:
-            if os.path.exists(self.jq.out_path):
-                start = time.time()
-                pool = Pool(max_workers=3)
-                pool.submit(self.monitor_tasks)
-                pool.submit(self.main, ids)
-                pool.shutdown(wait=True)
-                _ = [self.jq.save_result(self.jq.result_dic.get(id)) for id in ids]
-                self.jq.Reset.reset(self.jq.ws)
-                self.jq.Reset.reset(self.jq.ws_first)
-                self.jq.wb.save(os.path.join(self.jq.out_path, f'个人信息查询结果{time.strftime("%Y-%m-%d")}.xlsx'))
-                end = time.time()
-                self.run_message.emit(f'完成\n用时：{int((end - start) // 60)}分{round((end - start) % 60, 2)}秒')
+        if self.tag:
+            try:
+                ids = self.read_excel(path=self.dic.get('path'), col_tag=self.dic.get('col'), part=f"{self.dic.get('start_row')},{self.dic.get('end_row')}", sheet=self.dic.get('sheet'))
+            except Exception as E:
+                print(E)
+                self.run_message.emit(E)
             else:
-                self.run_message.emit(f'检查输出路径:{self.jq.out_path}')
+                if os.path.exists(self.jq.out_path):
+                    start = time.time()
+                    pool = Pool(max_workers=3)
+                    pool.submit(self.monitor_tasks)
+                    pool.submit(self.main, ids)
+                    pool.shutdown(wait=True)
+                    if self.tag == 'sb':
+                        _ = [self.jq.save_result(self.jq.result_dic.get(id)) for id in ids]
+                        self.jq.Reset.reset(self.jq.ws)
+                        self.jq.Reset.reset(self.jq.ws_first)
+                    elif self.tag == 'tz':
+                        _ = [self.jq.save(id) for id in ids]
+                        self.jq.reset_format(self.jq.ws, hidden=True)
+                        self.jq.reset_format(self.jq.ws_yl)
+                    elif self.tag == 'gr':
+                        _ = [self.jq.save(id) for id in ids]
+                        self.jq.reset_format()
+                    self.jq.wb.save(os.path.join(self.jq.out_path, f'{self.file_dic.get(self.tag)}{time.strftime("%Y-%m-%d")}.xlsx'))
+                    end = time.time()
+                    self.run_message.emit(f'完成\n用时：{int((end - start) // 60)}分{round((end - start) % 60, 2)}秒')
+                else:
+                    self.run_message.emit(f'检查输出路径:{self.jq.out_path}')
 

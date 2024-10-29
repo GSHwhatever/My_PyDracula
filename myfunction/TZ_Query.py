@@ -55,6 +55,7 @@ class JB(Base_Class):
         self.ws_yl = self.wb['台账预览']
         self.ws = self.wb['台账']
         self.Reset = Reset()
+        self.task_num = 0
     
     async def req_gr_message(self, id_num, TZ_dic):
         # 个人信息查询
@@ -276,6 +277,7 @@ class JB(Base_Class):
     
     async def run_first(self, ids):
         tasks = [self.req_gr_message(id, deepcopy(self.TZ_dic)) for id in ids]
+        self.task_num += (len(tasks) * 8)
         results = await asyncio.gather(*tasks)
         return results
     
