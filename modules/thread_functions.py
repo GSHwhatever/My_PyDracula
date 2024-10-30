@@ -56,6 +56,7 @@ class VPNWorker(QThread):
 
 class DownloadWorker(QThread):
 
+    get_info = Signal(int)
     run_result = Signal(int)
     run_message = Signal(str)
 
@@ -120,6 +121,7 @@ class DownloadWorker(QThread):
                 print(E)
                 self.run_message.emit(E)
             else:
+                self.get_info.emit(len(ids))
                 if os.path.exists(self.jq.out_path):
                     start = time.time()
                     pool = Pool(max_workers=3)

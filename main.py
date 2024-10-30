@@ -251,6 +251,7 @@ class MainWindow(QMainWindow):
             self.ui.progressBar.setValue(0)
             print(self.ui.comboBox.currentIndex())
             self.work = DownloadWorker(tag, dic, self.ini_path, self.template_excel)
+            self.work.get_info.connect(self.set_info)
             self.work.run_result.connect(self.run_result)
             self.work.run_message.connect(self.run_message)
             self.work.start()
@@ -340,6 +341,8 @@ class MainWindow(QMainWindow):
             #     widths.append(width)
             # print("当前每列的宽度:", widths)
 
+    def set_info(self, num):
+        self.ui.tb_batch.append(f'读取有效数据：{num}')
     
     def run_result(self, num):
         self.ui.progressBar.setValue(num)
