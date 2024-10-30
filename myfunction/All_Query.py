@@ -1,9 +1,8 @@
 # -*- coding:gbk -*-
 from openpyxl import load_workbook
 from . Base_Class import Base_Class, AuthError
-from tqdm import tqdm
-from icecream import ic
 from . Reset_width import Reset
+from icecream import ic
 import os, time, asyncio
 
 
@@ -89,14 +88,12 @@ class JC_Query(Base_Class):
         if status == 200:
             # ic(res)
             l2 = res.get('list', [])
-            print(f"l2-{l2}")
             if filter:
                 lt = [i for i in l2 if i.get('aae100') == "1"]
-                l = lt if lt else [l2[0]]
+                l = lt if lt else l2[:1]
             else:
                 l = l2
             lis = []
-            print(f'l:{l}')
             for i, d in enumerate(l, 1):
                 dic = {
                     "序号": i,
@@ -154,7 +151,7 @@ class JC_Query(Base_Class):
             l2 = res.get('list', [])
             if filter:
                 lt = [i for i in l2 if i.get('aae100') == "1"]
-                l = lt if lt else [l2[0]]
+                l = lt if lt else l2[:1]
             else:
                 l = l2
             lis = []
@@ -199,7 +196,7 @@ class JC_Query(Base_Class):
                 if filter:
                     lt = [i for i in l2 if i.get('acc0a3') != '0' and i.get('aae100') == "1"]
                     lt = sorted(lt, key=lambda x: x.get('acc341', '').replace('-', ''), reverse=True)
-                    l = lt[0] if lt else l2[:1]
+                    l = lt[:1] if lt else l2[:1]
                 else:
                     l = l2
                 for i, d in enumerate(l, 1):
@@ -244,7 +241,7 @@ class JC_Query(Base_Class):
                     if filter:
                         lt = [i for i in l2 if i.get('aae100') == "1"]
                         lt = sorted(lt, key=lambda x: x.get('acc361', '').replace('-', ''), reverse=True)
-                        l = lt[0] if lt else l2[0]
+                        l = lt[:1] if lt else l2[:1]
                     else:
                         l = l2
                     for i, d in enumerate(l, 1):
@@ -355,7 +352,7 @@ class JC_Query(Base_Class):
         results = await asyncio.gather(*tasks)
         return results
 
-    async def run_end(self, results, filter):
+    async def run_end(self, results, filter=True):
         tasks = []
         for payload in results:
             tasks.append(self.jydj_info(payload, filter))
@@ -409,7 +406,7 @@ class JC_Query(Base_Class):
     
 
 if __name__ == '__main__':
-    jc = JC_Query()
+    jc = JC_Query(ini_path='F:\Projects\SQ\My_PyDracula\config.ini', template_excel='F:\Projects\SQ\My_PyDracula\template_excel')
     lis = ['230304197204164426',
     '230304199802204212',
     '23030419720224481X',

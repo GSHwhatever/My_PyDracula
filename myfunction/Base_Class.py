@@ -5,8 +5,8 @@
 from openpyxl import load_workbook
 from openpyxl.utils.exceptions import InvalidFileException
 from requests.exceptions import RequestException, ConnectionError, Timeout, TooManyRedirects
-from . Dict import Dict
 from pprint import pprint
+from . Dict import Dict
 import re, os, aiohttp, configparser
 
 
