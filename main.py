@@ -247,6 +247,7 @@ class MainWindow(QMainWindow):
             起始行: {dic.get('start_row')}
             结束行: {dic.get('end_row')}
             """
+            self.ui.tb_batch.setTextColor("black")
             self.ui.tb_batch.setPlainText(text)
             self.ui.progressBar.setValue(0)
             print(self.ui.comboBox.currentIndex())
@@ -342,6 +343,7 @@ class MainWindow(QMainWindow):
             # print("当前每列的宽度:", widths)
 
     def set_info(self, num):
+        self.ui.tb_batch.setTextColor("black")
         self.ui.tb_batch.append(f'读取有效数据：{num}')
     
     def run_result(self, num):
