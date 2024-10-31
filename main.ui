@@ -1591,7 +1591,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </font>
                   </property>
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;金保下载器极速版&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;閲戜繚涓嬭浇鍣ㄦ瀬閫熺増&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -1938,7 +1938,7 @@ background-repeat: no-repeat;</string>
                                  <item>
                                   <widget class="QLabel" name="lb_idcard_login">
                                    <property name="text">
-                                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;身份证号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;韬唤璇佸彿&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                    </property>
                                   </widget>
                                  </item>
@@ -1990,7 +1990,7 @@ background-repeat: no-repeat;</string>
                                  <item>
                                   <widget class="QLabel" name="lb_name_login">
                                    <property name="text">
-                                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;姓名&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;濮撳悕&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                    </property>
                                   </widget>
                                  </item>
@@ -2029,7 +2029,7 @@ background-repeat: no-repeat;</string>
                                     <string notr="true">background-color: rgb(52, 59, 72);</string>
                                    </property>
                                    <property name="text">
-                                    <string>登录</string>
+                                    <string>鐧诲綍</string>
                                    </property>
                                   </widget>
                                  </item>
@@ -2055,7 +2055,7 @@ background-repeat: no-repeat;</string>
                                     <string notr="true">background-color: rgb(52, 59, 72);</string>
                                    </property>
                                    <property name="text">
-                                    <string>读取配置</string>
+                                    <string>璇诲彇閰嶇疆</string>
                                    </property>
                                   </widget>
                                  </item>
@@ -2111,7 +2111,7 @@ background-repeat: no-repeat;</string>
                                   <item>
                                    <widget class="QLabel" name="lb_user_login">
                                     <property name="text">
-                                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;用户&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;鐢ㄦ埛&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                     </property>
                                    </widget>
                                   </item>
@@ -2124,7 +2124,7 @@ background-repeat: no-repeat;</string>
                                      <string notr="true">background-color: rgb(33, 37, 43);</string>
                                     </property>
                                     <property name="text">
-                                     <string>未知</string>
+                                     <string>鏈煡</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -2162,7 +2162,7 @@ background-repeat: no-repeat;</string>
                                   <item>
                                    <widget class="QLabel" name="lb_origin_login">
                                     <property name="text">
-                                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;机构&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;鏈烘瀯&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                     </property>
                                    </widget>
                                   </item>
@@ -2175,7 +2175,7 @@ background-repeat: no-repeat;</string>
                                      <string notr="true">background-color: rgb(33, 37, 43);</string>
                                     </property>
                                     <property name="text">
-                                     <string>未知</string>
+                                     <string>鏈煡</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -2239,7 +2239,7 @@ background-repeat: no-repeat;</string>
                                   <item>
                                    <widget class="QPushButton" name="pb_vpn_login">
                                     <property name="text">
-                                     <string>一键登录小飞机</string>
+                                     <string>涓€閿櫥褰曞皬椋炴満</string>
                                     </property>
                                    </widget>
                                   </item>
@@ -2292,7 +2292,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:700;&quot;&gt;登录&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:700;&quot;&gt;鐧诲綍&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                        </widget>
@@ -2321,7 +2321,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;状态&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;鐘舵€�&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                        </widget>
@@ -2371,7 +2371,7 @@ background-repeat: no-repeat;</string>
                            </rect>
                           </property>
                           <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700;&quot;&gt;个人基础信息查询&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:28pt; font-weight:700;&quot;&gt;涓汉鍩虹淇℃伅鏌ヨ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                           </property>
                          </widget>
                          <widget class="QLabel" name="label_6">
@@ -2384,7 +2384,7 @@ background-repeat: no-repeat;</string>
                            </rect>
                           </property>
                           <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;身份证号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;韬唤璇佸彿&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                           </property>
                          </widget>
                          <widget class="QLineEdit" name="lineEdit">
@@ -2407,7 +2407,7 @@ background-repeat: no-repeat;</string>
                            </rect>
                           </property>
                           <property name="text">
-                           <string>查询</string>
+                           <string>鏌ヨ</string>
                           </property>
                          </widget>
                          <widget class="QTabWidget" name="ryjb_info">
@@ -2419,12 +2419,21 @@ background-repeat: no-repeat;</string>
                             <height>451</height>
                            </rect>
                           </property>
+                          <property name="styleSheet">
+                           <string notr="true"/>
+                          </property>
+                          <property name="tabPosition">
+                           <enum>QTabWidget::TabPosition::North</enum>
+                          </property>
+                          <property name="tabShape">
+                           <enum>QTabWidget::TabShape::Triangular</enum>
+                          </property>
                           <property name="currentIndex">
                            <number>0</number>
                           </property>
                           <widget class="QWidget" name="tab_7">
                            <attribute name="title">
-                            <string>人员基本信息</string>
+                            <string>浜哄憳鍩烘湰淇℃伅</string>
                            </attribute>
                            <widget class="QTableWidget" name="tableWidget">
                             <property name="geometry">
@@ -2436,7 +2445,17 @@ background-repeat: no-repeat;</string>
                              </rect>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">background: transparent;</string>
+                             <string notr="true">background-color: rgb(58, 58, 58)
+</string>
+                            </property>
+                            <property name="showGrid">
+                             <bool>true</bool>
+                            </property>
+                            <property name="gridStyle">
+                             <enum>Qt::PenStyle::CustomDashLine</enum>
+                            </property>
+                            <property name="sortingEnabled">
+                             <bool>false</bool>
                             </property>
                             <property name="rowCount">
                              <number>5</number>
@@ -2444,6 +2463,9 @@ background-repeat: no-repeat;</string>
                             <property name="columnCount">
                              <number>13</number>
                             </property>
+                            <attribute name="horizontalHeaderVisible">
+                             <bool>true</bool>
+                            </attribute>
                             <attribute name="verticalHeaderDefaultSectionSize">
                              <number>40</number>
                             </attribute>
@@ -2489,74 +2511,77 @@ background-repeat: no-repeat;</string>
                             </row>
                             <column>
                              <property name="text">
-                              <string>社会保障号</string>
+                              <string>绀句細淇濋殰鍙�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>姓名</string>
+                              <string>濮撳悕</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>性别</string>
+                              <string>鎬у埆</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>民族</string>
+                              <string>姘戞棌</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>出生日期</string>
+                              <string>鍑虹敓鏃ユ湡</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业创业证号码</string>
+                              <string>灏变笟鍒涗笟璇佸彿鐮�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>人员类别</string>
+                              <string>浜哄憳绫诲埆</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>文化程度</string>
+                              <string>鏂囧寲绋嬪害</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>手机号码</string>
+                              <string>鎵嬫満鍙风爜</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业状态</string>
+                              <string>灏变笟鐘舵€�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办人</string>
+                              <string>缁忓姙浜�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办机构</string>
+                              <string>缁忓姙鏈烘瀯</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办日期</string>
+                              <string>缁忓姙鏃ユ湡</string>
                              </property>
                             </column>
                            </widget>
                           </widget>
                           <widget class="QWidget" name="tab_2">
+                           <property name="styleSheet">
+                            <string notr="true">background-color: rgb(0, 0, 0);</string>
+                           </property>
                            <attribute name="title">
-                            <string>就业登记信息</string>
+                            <string>灏变笟鐧昏淇℃伅</string>
                            </attribute>
                            <widget class="QTableWidget" name="tableWidget_3">
                             <property name="geometry">
@@ -2568,7 +2593,8 @@ background-repeat: no-repeat;</string>
                              </rect>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">background: transparent;</string>
+                             <string notr="true">background-color: rgb(58, 58, 58)
+</string>
                             </property>
                             <attribute name="horizontalHeaderMinimumSectionSize">
                              <number>50</number>
@@ -2624,179 +2650,179 @@ background-repeat: no-repeat;</string>
                             </row>
                             <column>
                              <property name="text">
-                              <string>社会保障号</string>
+                              <string>绀句細淇濋殰鍙�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>姓名</string>
+                              <string>濮撳悕</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>性别</string>
+                              <string>鎬у埆</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>证件类型</string>
+                              <string>璇佷欢绫诲瀷</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>证件号码</string>
+                              <string>璇佷欢鍙风爜</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业类型</string>
+                              <string>灏变笟绫诲瀷</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>有效标记</string>
+                              <string>鏈夋晥鏍囪</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>单位名称</string>
+                              <string>鍗曚綅鍚嶇О</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>单位统一社会信用代码</string>
+                              <string>鍗曚綅缁熶竴绀句細淇＄敤浠ｇ爜</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>单位类型</string>
+                              <string>鍗曚綅绫诲瀷</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业形式</string>
+                              <string>灏变笟褰㈠紡</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业类型</string>
+                              <string>灏变笟绫诲瀷</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业登记日期</string>
+                              <string>灏变笟鐧昏鏃ユ湡</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业日期</string>
+                              <string>灏变笟鏃ユ湡</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业地点</string>
+                              <string>灏变笟鍦扮偣</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业地点详细地址</string>
+                              <string>灏变笟鍦扮偣璇︾粏鍦板潃</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业职业（工种）</string>
+                              <string>灏变笟鑱屼笟锛堝伐绉嶏級</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业工种名称</string>
+                              <string>灏变笟宸ョ鍚嶇О</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>从事产业类别</string>
+                              <string>浠庝簨浜т笟绫诲埆</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>是否登记失业人员</string>
+                              <string>鏄惁鐧昏澶变笟浜哄憳</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>是否就业困难人员</string>
+                              <string>鏄惁灏变笟鍥伴毦浜哄憳</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>注册日期【个体经营】</string>
+                              <string>娉ㄥ唽鏃ユ湡銆愪釜浣撶粡钀ャ€�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经营住所【个体经营】</string>
+                              <string>缁忚惀浣忔墍銆愪釜浣撶粡钀ャ€�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>工作内容【灵活就业】</string>
+                              <string>宸ヤ綔鍐呭銆愮伒娲诲氨涓氥€�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>合同开始日期</string>
+                              <string>鍚堝悓寮€濮嬫棩鏈�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>合同结束日期</string>
+                              <string>鍚堝悓缁撴潫鏃ユ湡</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>岗位名称</string>
+                              <string>宀椾綅鍚嶇О</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>岗位编码</string>
+                              <string>宀椾綅缂栫爜</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>是否4050人员</string>
+                              <string>鏄惁4050浜哄憳</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>薪资报酬</string>
+                              <string>钖祫鎶ラ叕</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业困难人员类别</string>
+                              <string>灏变笟鍥伴毦浜哄憳绫诲埆</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办人</string>
+                              <string>缁忓姙浜�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办机构</string>
+                              <string>缁忓姙鏈烘瀯</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办日期</string>
+                              <string>缁忓姙鏃ユ湡</string>
                              </property>
                             </column>
                            </widget>
                           </widget>
                           <widget class="QWidget" name="tab_3">
                            <attribute name="title">
-                            <string>失业登记信息</string>
+                            <string>澶变笟鐧昏淇℃伅</string>
                            </attribute>
                            <widget class="QTableWidget" name="tableWidget_4">
                             <property name="geometry">
@@ -2808,7 +2834,8 @@ background-repeat: no-repeat;</string>
                              </rect>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">background: transparent;</string>
+                             <string notr="true">background-color: rgb(58, 58, 58)
+</string>
                             </property>
                             <attribute name="verticalHeaderMinimumSectionSize">
                              <number>25</number>
@@ -2858,84 +2885,84 @@ background-repeat: no-repeat;</string>
                             </row>
                             <column>
                              <property name="text">
-                              <string>失业登记日期</string>
+                              <string>澶变笟鐧昏鏃ユ湡</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>社会保障号码</string>
+                              <string>绀句細淇濋殰鍙风爜</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>姓名</string>
+                              <string>濮撳悕</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>性别</string>
+                              <string>鎬у埆</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>证件类型</string>
+                              <string>璇佷欢绫诲瀷</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>证件号码</string>
+                              <string>璇佷欢鍙风爜</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>学历</string>
+                              <string>瀛﹀巻</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>户籍地区划</string>
+                              <string>鎴风睄鍦板尯鍒�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>常住地区划</string>
+                              <string>甯镐綇鍦板尯鍒�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>失业时间</string>
+                              <string>澶变笟鏃堕棿</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>失业原因</string>
+                              <string>澶变笟鍘熷洜</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>有效标记</string>
+                              <string>鏈夋晥鏍囪</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办人</string>
+                              <string>缁忓姙浜�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办机构</string>
+                              <string>缁忓姙鏈烘瀯</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办日期</string>
+                              <string>缁忓姙鏃ユ湡</string>
                              </property>
                             </column>
                            </widget>
                           </widget>
                           <widget class="QWidget" name="tab_4">
                            <attribute name="title">
-                            <string>就业创业证信息</string>
+                            <string>灏变笟鍒涗笟璇佷俊鎭�</string>
                            </attribute>
                            <widget class="QTableWidget" name="tableWidget_5">
                             <property name="geometry">
@@ -2947,7 +2974,8 @@ background-repeat: no-repeat;</string>
                              </rect>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">background: transparent;</string>
+                             <string notr="true">background-color: rgb(58, 58, 58)
+</string>
                             </property>
                             <attribute name="horizontalHeaderDefaultSectionSize">
                              <number>120</number>
@@ -2997,74 +3025,74 @@ background-repeat: no-repeat;</string>
                             </row>
                             <column>
                              <property name="text">
-                              <string>身份证号</string>
+                              <string>韬唤璇佸彿</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>姓名</string>
+                              <string>濮撳悕</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>性别</string>
+                              <string>鎬у埆</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>证件申请类型</string>
+                              <string>璇佷欢鐢宠绫诲瀷</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业创业证号码</string>
+                              <string>灏变笟鍒涗笟璇佸彿鐮�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>原证件号码</string>
+                              <string>鍘熻瘉浠跺彿鐮�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>发放标记</string>
+                              <string>鍙戞斁鏍囪</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>有效标记</string>
+                              <string>鏈夋晥鏍囪</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>发放日期</string>
+                              <string>鍙戞斁鏃ユ湡</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>发证机构</string>
+                              <string>鍙戣瘉鏈烘瀯</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办人</string>
+                              <string>缁忓姙浜�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办机构</string>
+                              <string>缁忓姙鏈烘瀯</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>经办日期</string>
+                              <string>缁忓姙鏃ユ湡</string>
                              </property>
                             </column>
                            </widget>
                           </widget>
                           <widget class="QWidget" name="tab_5">
                            <attribute name="title">
-                            <string>就业困难人员认定信息</string>
+                            <string>灏变笟鍥伴毦浜哄憳璁ゅ畾淇℃伅</string>
                            </attribute>
                            <widget class="QTableWidget" name="tableWidget_6">
                             <property name="geometry">
@@ -3076,7 +3104,8 @@ background-repeat: no-repeat;</string>
                              </rect>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">background: transparent;</string>
+                             <string notr="true">background-color: rgb(58, 58, 58)
+</string>
                             </property>
                             <attribute name="horizontalHeaderDefaultSectionSize">
                              <number>110</number>
@@ -3126,69 +3155,69 @@ background-repeat: no-repeat;</string>
                             </row>
                             <column>
                              <property name="text">
-                              <string>社会保障号</string>
+                              <string>绀句細淇濋殰鍙�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>姓名</string>
+                              <string>濮撳悕</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>证件号码</string>
+                              <string>璇佷欢鍙风爜</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>性别</string>
+                              <string>鎬у埆</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>出生日期</string>
+                              <string>鍑虹敓鏃ユ湡</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>住址</string>
+                              <string>浣忓潃</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>联系电话</string>
+                              <string>鑱旂郴鐢佃瘽</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>人员类别</string>
+                              <string>浜哄憳绫诲埆</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>有效标记</string>
+                              <string>鏈夋晥鏍囪</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业援助对象类型</string>
+                              <string>灏变笟鎻村姪瀵硅薄绫诲瀷</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业援助对象认定时间</string>
+                              <string>灏变笟鎻村姪瀵硅薄璁ゅ畾鏃堕棿</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>就业援助对象有效期开始时间</string>
+                              <string>灏变笟鎻村姪瀵硅薄鏈夋晥鏈熷紑濮嬫椂闂�</string>
                              </property>
                             </column>
                            </widget>
                           </widget>
                           <widget class="QWidget" name="tab_6">
                            <attribute name="title">
-                            <string>职业资格证书信息</string>
+                            <string>鑱屼笟璧勬牸璇佷功淇℃伅</string>
                            </attribute>
                            <widget class="QTableWidget" name="tableWidget_7">
                             <property name="geometry">
@@ -3200,7 +3229,8 @@ background-repeat: no-repeat;</string>
                              </rect>
                             </property>
                             <property name="styleSheet">
-                             <string notr="true">background: transparent;</string>
+                             <string notr="true">background-color: rgb(58, 58, 58)
+</string>
                             </property>
                             <attribute name="horizontalHeaderDefaultSectionSize">
                              <number>115</number>
@@ -3250,77 +3280,77 @@ background-repeat: no-repeat;</string>
                             </row>
                             <column>
                              <property name="text">
-                              <string>姓名</string>
+                              <string>濮撳悕</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>证件号码</string>
+                              <string>璇佷欢鍙风爜</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>性别</string>
+                              <string>鎬у埆</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>职业工种名称</string>
+                              <string>鑱屼笟宸ョ鍚嶇О</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>职业方向</string>
+                              <string>鑱屼笟鏂瑰悜</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>技能等级</string>
+                              <string>鎶€鑳界瓑绾�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>理论知识考试成绩</string>
+                              <string>鐞嗚鐭ヨ瘑鑰冭瘯鎴愮哗</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>技能考核成绩</string>
+                              <string>鎶€鑳借€冩牳鎴愮哗</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>评定成绩</string>
+                              <string>璇勫畾鎴愮哗</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>文化程度</string>
+                              <string>鏂囧寲绋嬪害</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>证书编号</string>
+                              <string>璇佷功缂栧彿</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>发证日期</string>
+                              <string>鍙戣瘉鏃ユ湡</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>职业技能鉴定机构</string>
+                              <string>鑱屼笟鎶€鑳介壌瀹氭満鏋�</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>发证机关</string>
+                              <string>鍙戣瘉鏈哄叧</string>
                              </property>
                             </column>
                             <column>
                              <property name="text">
-                              <string>数据责任单位</string>
+                              <string>鏁版嵁璐ｄ换鍗曚綅</string>
                              </property>
                             </column>
                            </widget>
@@ -3341,7 +3371,7 @@ background-repeat: no-repeat;</string>
                         </rect>
                        </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;文件路径&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;鏂囦欢璺緞&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                       <widget class="QPushButton" name="pb_select_batch">
@@ -3354,7 +3384,7 @@ background-repeat: no-repeat;</string>
                         </rect>
                        </property>
                        <property name="text">
-                        <string>选择文件</string>
+                        <string>閫夋嫨鏂囦欢</string>
                        </property>
                       </widget>
                       <widget class="QLineEdit" name="le_input_batch">
@@ -3373,7 +3403,7 @@ background-repeat: no-repeat;</string>
                         <string notr="true">background-color: rgb(33, 37, 43);</string>
                        </property>
                        <property name="placeholderText">
-                        <string>选择excel文件路径</string>
+                        <string>閫夋嫨excel鏂囦欢璺緞</string>
                        </property>
                       </widget>
                       <widget class="QWidget" name="gridLayoutWidget">
@@ -3389,14 +3419,14 @@ background-repeat: no-repeat;</string>
                         <item row="0" column="0">
                          <widget class="QLabel" name="lb_sheet_batch">
                           <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Sheet表&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Sheet琛�&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                           </property>
                          </widget>
                         </item>
                         <item row="0" column="2">
                          <widget class="QLabel" name="lb_colum_batch">
                           <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;列号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;鍒楀彿&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                           </property>
                          </widget>
                         </item>
@@ -3406,7 +3436,7 @@ background-repeat: no-repeat;</string>
                            <string notr="true">background-color: rgb(33, 37, 43);</string>
                           </property>
                           <property name="placeholderText">
-                           <string>默认第一个Sheet表</string>
+                           <string>榛樿绗竴涓猄heet琛�</string>
                           </property>
                          </widget>
                         </item>
@@ -3416,14 +3446,14 @@ background-repeat: no-repeat;</string>
                            <string notr="true">background-color: rgb(33, 37, 43);</string>
                           </property>
                           <property name="placeholderText">
-                           <string>默认A列</string>
+                           <string>榛樿A鍒�</string>
                           </property>
                          </widget>
                         </item>
                         <item row="1" column="0">
                          <widget class="QLabel" name="lb_startrow_batch">
                           <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;首行&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;棣栬&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                           </property>
                          </widget>
                         </item>
@@ -3433,14 +3463,14 @@ background-repeat: no-repeat;</string>
                            <string notr="true">background-color: rgb(33, 37, 43);</string>
                           </property>
                           <property name="placeholderText">
-                           <string>起始行，默认第一行</string>
+                           <string>璧峰琛岋紝榛樿绗竴琛�</string>
                           </property>
                          </widget>
                         </item>
                         <item row="1" column="2">
                          <widget class="QLabel" name="lb_endrow_batch">
                           <property name="text">
-                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;尾行&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;灏捐&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                           </property>
                          </widget>
                         </item>
@@ -3450,7 +3480,7 @@ background-repeat: no-repeat;</string>
                            <string notr="true">background-color: rgb(33, 37, 43);</string>
                           </property>
                           <property name="placeholderText">
-                           <string>结束行，默认数据最后一行</string>
+                           <string>缁撴潫琛岋紝榛樿鏁版嵁鏈€鍚庝竴琛�</string>
                           </property>
                          </widget>
                         </item>
@@ -3466,7 +3496,7 @@ background-repeat: no-repeat;</string>
                         </rect>
                        </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:700;&quot;&gt;批量导出查询结果&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:700;&quot;&gt;鎵归噺瀵煎嚭鏌ヨ缁撴灉&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                       <widget class="QPushButton" name="pb_run_batch">
@@ -3479,7 +3509,7 @@ background-repeat: no-repeat;</string>
                         </rect>
                        </property>
                        <property name="text">
-                        <string>导出</string>
+                        <string>瀵煎嚭</string>
                        </property>
                       </widget>
                       <widget class="QScrollArea" name="scrollArea">
@@ -3503,7 +3533,7 @@ background-repeat: no-repeat;</string>
                           <height>249</height>
                          </rect>
                         </property>
-                        <widget class="QTextBrowser" name="tb_batch">
+                        <widget class="QTextEdit" name="tb_batch">
                          <property name="geometry">
                           <rect>
                            <x>0</x>
@@ -3513,7 +3543,11 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">background: transparent;</string>
+                          <string notr="true">background-color: rgb(58, 58, 58)
+rgb(0, 0, 0)</string>
+                         </property>
+                         <property name="readOnly">
+                          <bool>true</bool>
                          </property>
                         </widget>
                        </widget>
@@ -3565,21 +3599,21 @@ background-repeat: no-repeat;</string>
                         <number>-1</number>
                        </property>
                        <property name="placeholderText">
-                        <string>查询项目</string>
+                        <string>鏌ヨ椤圭洰</string>
                        </property>
                        <item>
                         <property name="text">
-                         <string>经办端参保情况</string>
+                         <string>缁忓姙绔弬淇濇儏鍐�</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>金保台账详情</string>
+                         <string>閲戜繚鍙拌处璇︽儏</string>
                         </property>
                        </item>
                        <item>
                         <property name="text">
-                         <string>金保个人基本信息</string>
+                         <string>閲戜繚涓汉鍩烘湰淇℃伅</string>
                         </property>
                        </item>
                       </widget>
@@ -3595,7 +3629,7 @@ background-repeat: no-repeat;</string>
                         </rect>
                        </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:700;&quot;&gt;设置&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:700;&quot;&gt;璁剧疆&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                       <widget class="QLabel" name="label">
@@ -3608,7 +3642,7 @@ background-repeat: no-repeat;</string>
                         </rect>
                        </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;配置登录信息：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;閰嶇疆鐧诲綍淇℃伅锛�&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                       <widget class="QLabel" name="label_2">
@@ -3621,7 +3655,7 @@ background-repeat: no-repeat;</string>
                         </rect>
                        </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;身份证号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;韬唤璇佸彿&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                       <widget class="QLineEdit" name="lineEdit_2">
@@ -3647,7 +3681,7 @@ background-repeat: no-repeat;</string>
                         </rect>
                        </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;姓名&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;濮撳悕&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                       <widget class="QLineEdit" name="lineEdit_3">
@@ -3673,7 +3707,7 @@ background-repeat: no-repeat;</string>
                         </rect>
                        </property>
                        <property name="text">
-                        <string>提交</string>
+                        <string>鎻愪氦</string>
                        </property>
                       </widget>
                       <widget class="QLabel" name="label_4">
@@ -3686,7 +3720,7 @@ background-repeat: no-repeat;</string>
                         </rect>
                        </property>
                        <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;配置导出路径：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;閰嶇疆瀵煎嚭璺緞锛�&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                       <widget class="QStackedWidget" name="stackedWidget_2">
@@ -3774,7 +3808,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;身份证号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;韬唤璇佸彿&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_name_login_2">
@@ -3787,7 +3821,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;姓名&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;濮撳悕&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_title_login_2">
@@ -3800,7 +3834,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:700;&quot;&gt;登录&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:48pt; font-weight:700;&quot;&gt;鐧诲綍&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QPushButton" name="pb_rc_login_2">
@@ -3816,7 +3850,7 @@ background-repeat: no-repeat;</string>
                           <string notr="true">background-color: rgb(52, 59, 72);</string>
                          </property>
                          <property name="text">
-                          <string>读取配置</string>
+                          <string>璇诲彇閰嶇疆</string>
                          </property>
                         </widget>
                         <widget class="QPushButton" name="pb_login_login_2">
@@ -3832,7 +3866,7 @@ background-repeat: no-repeat;</string>
                           <string notr="true">background-color: rgb(52, 59, 72);</string>
                          </property>
                          <property name="text">
-                          <string>登录</string>
+                          <string>鐧诲綍</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_user_login_2">
@@ -3845,7 +3879,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;用户&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;鐢ㄦ埛&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_origin_login_2">
@@ -3858,7 +3892,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;机构&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;鏈烘瀯&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_statue_login_2">
@@ -3871,7 +3905,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;登录状态：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;鐧诲綍鐘舵€侊細&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                        </widget>
@@ -4513,7 +4547,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;文件路径&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;鏂囦欢璺緞&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QPushButton" name="pb_select_batch_2">
@@ -4526,7 +4560,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>选择文件</string>
+                          <string>閫夋嫨鏂囦欢</string>
                          </property>
                         </widget>
                         <widget class="QLineEdit" name="le_input_batch_2">
@@ -4558,14 +4592,14 @@ background-repeat: no-repeat;</string>
                           <item row="0" column="0">
                            <widget class="QLabel" name="lb_sheet_batch_2">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Sheet表&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Sheet琛�&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
                           <item row="0" column="2">
                            <widget class="QLabel" name="lb_colum_batch_2">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;列号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;鍒楀彿&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
@@ -4586,7 +4620,7 @@ background-repeat: no-repeat;</string>
                           <item row="1" column="0">
                            <widget class="QLabel" name="lb_hy_batch_2">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;行域&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;琛屽煙&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
@@ -4600,7 +4634,7 @@ background-repeat: no-repeat;</string>
                           <item row="1" column="2">
                            <widget class="QLabel" name="lb_other_batch_2">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;其他&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;鍏朵粬&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
@@ -4639,7 +4673,7 @@ background-repeat: no-repeat;</string>
                           <string notr="true">background-color: rgb(33, 37, 43);</string>
                          </property>
                          <property name="text">
-                          <string>经办端保险</string>
+                          <string>缁忓姙绔繚闄�</string>
                          </property>
                         </widget>
                         <widget class="QCheckBox" name="cb_jbtz_2">
@@ -4655,7 +4689,7 @@ background-repeat: no-repeat;</string>
                           <string notr="true">background-color: rgb(33, 37, 43);</string>
                          </property>
                          <property name="text">
-                          <string>金保台账</string>
+                          <string>閲戜繚鍙拌处</string>
                          </property>
                         </widget>
                         <widget class="QCheckBox" name="cb_jbinfo_2">
@@ -4671,7 +4705,7 @@ background-repeat: no-repeat;</string>
                           <string notr="true">background-color: rgb(33, 37, 43);</string>
                          </property>
                          <property name="text">
-                          <string>金保个人基本信息</string>
+                          <string>閲戜繚涓汉鍩烘湰淇℃伅</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_title_batch_2">
@@ -4684,7 +4718,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:700;&quot;&gt;批量导出查询结果&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:700;&quot;&gt;鎵归噺瀵煎嚭鏌ヨ缁撴灉&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QPushButton" name="pb_run_batch_2">
@@ -4697,7 +4731,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>导出</string>
+                          <string>瀵煎嚭</string>
                          </property>
                         </widget>
                        </widget>
@@ -4712,7 +4746,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:700;&quot;&gt;设置&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; font-weight:700;&quot;&gt;璁剧疆&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_login_set">
@@ -4725,7 +4759,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;配置登录信息：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;閰嶇疆鐧诲綍淇℃伅锛�&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_idcard_set">
@@ -4738,7 +4772,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;身份证号&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;韬唤璇佸彿&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLineEdit" name="le_idcard_set">
@@ -4767,7 +4801,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;姓名&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;濮撳悕&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLineEdit" name="le_name_set">
@@ -4796,7 +4830,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>提交</string>
+                          <string>鎻愪氦</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_path_set">
@@ -4809,7 +4843,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;配置导出路径：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;閰嶇疆瀵煎嚭璺緞锛�&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_path2_set">
@@ -4822,7 +4856,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;选择路径：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;閫夋嫨璺緞锛�&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLineEdit" name="le_path_set">
@@ -4851,7 +4885,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>选择路径</string>
+                          <string>閫夋嫨璺緞</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_host_set">
@@ -4864,7 +4898,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;配置主机地址：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;閰嶇疆涓绘満鍦板潃锛�&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_jb_set">
@@ -4877,7 +4911,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;金保&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;閲戜繚&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_JB_set">
@@ -4890,7 +4924,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;经办&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;缁忓姙&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLineEdit" name="le_jb_set">
@@ -4935,7 +4969,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>提交</string>
+                          <string>鎻愪氦</string>
                          </property>
                         </widget>
                         <widget class="QPushButton" name="pb_edit_set">
@@ -4948,7 +4982,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>编辑</string>
+                          <string>缂栬緫</string>
                          </property>
                         </widget>
                         <widget class="QPushButton" name="pb_edit_set2">
@@ -4961,7 +4995,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>编辑</string>
+                          <string>缂栬緫</string>
                          </property>
                         </widget>
                         <widget class="QLabel" name="lb_path_set_2">
@@ -4974,7 +5008,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;配置小飞机路径：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;閰嶇疆灏忛鏈鸿矾寰勶細&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QLineEdit" name="le_path_set_2">
@@ -5003,7 +5037,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;选择路径：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;閫夋嫨璺緞锛�&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                         <widget class="QPushButton" name="pb_choose_set_2">
@@ -5016,7 +5050,7 @@ background-repeat: no-repeat;</string>
                           </rect>
                          </property>
                          <property name="text">
-                          <string>选择路径</string>
+                          <string>閫夋嫨璺緞</string>
                          </property>
                         </widget>
                        </widget>
