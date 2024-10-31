@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainDntjZa.ui'
+## Form generated from reading UI file 'maindIkvnh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.2
 ##
@@ -1294,6 +1294,9 @@ class Ui_MainWindow(object):
         self.ryjb_info = QTabWidget(self.row_3)
         self.ryjb_info.setObjectName(u"ryjb_info")
         self.ryjb_info.setGeometry(QRect(0, 130, 1161, 451))
+        self.ryjb_info.setStyleSheet(u"")
+        self.ryjb_info.setTabPosition(QTabWidget.TabPosition.North)
+        self.ryjb_info.setTabShape(QTabWidget.TabShape.Triangular)
         self.tab_7 = QWidget()
         self.tab_7.setObjectName(u"tab_7")
         self.tableWidget = QTableWidget(self.tab_7)
@@ -1344,13 +1347,19 @@ class Ui_MainWindow(object):
         self.tableWidget.setVerticalHeaderItem(4, __qtablewidgetitem17)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setGeometry(QRect(0, 0, 1151, 421))
-        self.tableWidget.setStyleSheet(u"background: transparent;")
+        self.tableWidget.setStyleSheet(u"background-color: rgb(58, 58, 58)\n"
+"")
+        self.tableWidget.setShowGrid(True)
+        self.tableWidget.setGridStyle(Qt.PenStyle.CustomDashLine)
+        self.tableWidget.setSortingEnabled(False)
         self.tableWidget.setRowCount(5)
         self.tableWidget.setColumnCount(13)
+        self.tableWidget.horizontalHeader().setVisible(True)
         self.tableWidget.verticalHeader().setDefaultSectionSize(40)
         self.ryjb_info.addTab(self.tab_7, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
+        self.tab_2.setStyleSheet(u"background-color: rgb(0, 0, 0);")
         self.tableWidget_3 = QTableWidget(self.tab_2)
         if (self.tableWidget_3.columnCount() < 34):
             self.tableWidget_3.setColumnCount(34)
@@ -1441,7 +1450,8 @@ class Ui_MainWindow(object):
         self.tableWidget_3.setVerticalHeaderItem(4, __qtablewidgetitem56)
         self.tableWidget_3.setObjectName(u"tableWidget_3")
         self.tableWidget_3.setGeometry(QRect(0, 0, 1151, 421))
-        self.tableWidget_3.setStyleSheet(u"background: transparent;")
+        self.tableWidget_3.setStyleSheet(u"background-color: rgb(58, 58, 58)\n"
+"")
         self.tableWidget_3.horizontalHeader().setMinimumSectionSize(50)
         self.tableWidget_3.horizontalHeader().setDefaultSectionSize(125)
         self.tableWidget_3.verticalHeader().setMinimumSectionSize(30)
@@ -1501,7 +1511,8 @@ class Ui_MainWindow(object):
         self.tableWidget_4.setVerticalHeaderItem(4, __qtablewidgetitem76)
         self.tableWidget_4.setObjectName(u"tableWidget_4")
         self.tableWidget_4.setGeometry(QRect(0, 0, 1151, 421))
-        self.tableWidget_4.setStyleSheet(u"background: transparent;")
+        self.tableWidget_4.setStyleSheet(u"background-color: rgb(58, 58, 58)\n"
+"")
         self.tableWidget_4.verticalHeader().setMinimumSectionSize(25)
         self.tableWidget_4.verticalHeader().setDefaultSectionSize(40)
         self.ryjb_info.addTab(self.tab_3, "")
@@ -1555,7 +1566,8 @@ class Ui_MainWindow(object):
         self.tableWidget_5.setVerticalHeaderItem(4, __qtablewidgetitem94)
         self.tableWidget_5.setObjectName(u"tableWidget_5")
         self.tableWidget_5.setGeometry(QRect(0, 0, 1151, 431))
-        self.tableWidget_5.setStyleSheet(u"background: transparent;")
+        self.tableWidget_5.setStyleSheet(u"background-color: rgb(58, 58, 58)\n"
+"")
         self.tableWidget_5.horizontalHeader().setDefaultSectionSize(120)
         self.tableWidget_5.verticalHeader().setDefaultSectionSize(40)
         self.ryjb_info.addTab(self.tab_4, "")
@@ -1607,7 +1619,8 @@ class Ui_MainWindow(object):
         self.tableWidget_6.setVerticalHeaderItem(4, __qtablewidgetitem111)
         self.tableWidget_6.setObjectName(u"tableWidget_6")
         self.tableWidget_6.setGeometry(QRect(0, 0, 1151, 421))
-        self.tableWidget_6.setStyleSheet(u"background: transparent;")
+        self.tableWidget_6.setStyleSheet(u"background-color: rgb(58, 58, 58)\n"
+"")
         self.tableWidget_6.horizontalHeader().setDefaultSectionSize(110)
         self.tableWidget_6.verticalHeader().setDefaultSectionSize(40)
         self.ryjb_info.addTab(self.tab_5, "")
@@ -1665,7 +1678,8 @@ class Ui_MainWindow(object):
         self.tableWidget_7.setVerticalHeaderItem(4, __qtablewidgetitem131)
         self.tableWidget_7.setObjectName(u"tableWidget_7")
         self.tableWidget_7.setGeometry(QRect(0, 0, 1151, 421))
-        self.tableWidget_7.setStyleSheet(u"background: transparent;")
+        self.tableWidget_7.setStyleSheet(u"background-color: rgb(58, 58, 58)\n"
+"")
         self.tableWidget_7.horizontalHeader().setDefaultSectionSize(115)
         self.tableWidget_7.verticalHeader().setDefaultSectionSize(40)
         self.ryjb_info.addTab(self.tab_6, "")
@@ -1748,10 +1762,12 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 569, 249))
-        self.tb_batch = QTextBrowser(self.scrollAreaWidgetContents)
+        self.tb_batch = QTextEdit(self.scrollAreaWidgetContents)
         self.tb_batch.setObjectName(u"tb_batch")
         self.tb_batch.setGeometry(QRect(0, 0, 571, 251))
-        self.tb_batch.setStyleSheet(u"background: transparent;")
+        self.tb_batch.setStyleSheet(u"background-color: rgb(58, 58, 58)\n"
+"rgb(0, 0, 0)")
+        self.tb_batch.setReadOnly(True)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.progressBar = QProgressBar(self.batch)
         self.progressBar.setObjectName(u"progressBar")
