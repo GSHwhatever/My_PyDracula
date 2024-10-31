@@ -9,8 +9,8 @@ code 返回信息标识  01: 操作成功！      02:操作失败，校验不通过，详见风控结果!
 高风险内部核查 | 当前不能存在有效的就业信息 | 拦截
 """
 from . Base_Class import Base_Class, AuthError
-from openpyxl import load_workbook
 from . Reset_width import Reset
+from openpyxl import load_workbook
 from datetime import datetime
 from icecream import ic
 from copy import deepcopy
@@ -68,6 +68,13 @@ class JB(Base_Class):
             status = result.status
         if status == 200:
             data = res.get('data').get('list')
+            age = datetime.now().year - int(id_num[6:10])
+            if age in range(16, 25):
+                age_ = '16-24'
+            elif age in range(25, 46):
+                age_ = '25-45'
+            elif age in range(46, 61):
+                age_ = '46-60'
             if data:
                 datas = data[0]
                 TZ_dic.update({"姓名": datas.get("aac003")})
@@ -76,13 +83,6 @@ class JB(Base_Class):
                 TZ_dic.update({"身份证号": datas.get("aac002")})
                 TZ_dic.update({"电话号": datas.get("aae005")})
                 TZ_dic.update({"所属社区": datas.get("aae020")})
-                age = datetime.now().year - int(id_num[6:10])
-                if age in range(16, 25):
-                    age_ = '16-24'
-                elif age in range(25, 46):
-                    age_ = '25-45'
-                elif age in range(46, 61):
-                    age_ = '46-60'
                 TZ_dic.update({"年龄": age})
                 TZ_dic.update({"年龄段": age_})
                 TZ_dic.update({"文化程度": self.whcd_dic.get(datas.get("aac011"), datas.get("aac011"))})
@@ -95,7 +95,14 @@ class JB(Base_Class):
                 self.result_dic.update({id_num: TZ_dic})
                 return payload
             else:
-                ic(f'data_else:{res.json()}')
+                TZ_dic.update({"身份证号": id_num})
+                TZ_dic.update({"年龄": age})
+                TZ_dic.update({"年龄段": age_})
+                self.result_dic.update({id_num: TZ_dic})
+                if hasattr(res, 'json'):
+                    ic(f'data_else:{res.json()}')
+                else:
+                    ic(f'{id_num}_res:{res}')
         else:
             raise AuthError(message=res.get('msg'), code=status)
     
@@ -284,13 +291,14 @@ class JB(Base_Class):
     async def run_end(self, results):
         tasks = []
         for payload in results:
-            tasks.append(self.req_zyzgzs_message(payload))
-            tasks.append(self.req_jykn_message(payload))
-            tasks.append(self.res_jy_message(payload))
-            tasks.append(self.res_sy_message(payload))
-            tasks.append(self.req_jycyz_message(payload))
-            tasks.append(self.req_lhjy_message(payload.get('aac002')))
-            tasks.append(self.req_sy_message(payload.get('aac002')))
+            if payload:
+                tasks.append(self.req_zyzgzs_message(payload))
+                tasks.append(self.req_jykn_message(payload))
+                tasks.append(self.res_jy_message(payload))
+                tasks.append(self.res_sy_message(payload))
+                tasks.append(self.req_jycyz_message(payload))
+                tasks.append(self.req_lhjy_message(payload.get('aac002')))
+                tasks.append(self.req_sy_message(payload.get('aac002')))
         await asyncio.gather(*tasks)
 
     async def run(self, ids):
@@ -337,7 +345,7 @@ class JB(Base_Class):
 
 
 if __name__ == '__main__':
-    jb = JB()
+    jb = JB(ini_path='F:\Projects\SQ\My_PyDracula\config.ini', template_excel=r'F:\Projects\SQ\My_PyDracula\template_excel')
     # jb.main(r'C:\Users\GSH\Desktop\test.xlsx')
     lis = ['230304197204164426',
     '230304199802204212',
@@ -612,6 +620,6 @@ if __name__ == '__main__':
     '230304200009214015',
     '23030419960223461X',
     '230304198501184428']
-    jb.main(lis)
+    jb.main(['230304199812134413'])
     
     

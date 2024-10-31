@@ -100,6 +100,9 @@ class MainWindow(QMainWindow):
         widgets.pb_edit_set.clicked.connect(self.buttonClick)
         widgets.pb_edit_set2.clicked.connect(self.buttonClick)
 
+        # 快捷键
+        widgets.lineEdit.returnPressed.connect(self.search)
+
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
@@ -216,10 +219,7 @@ class MainWindow(QMainWindow):
             self.vpn_thread.start()
         
         if btnName == "pushButton":
-            idcard = self.ui.lineEdit.text()
-            self.search_thread = SearchWorker(idcard, self.ini_path, self.template_excel)
-            self.search_thread.search_result.connect(self.table_update)
-            self.search_thread.start()
+            self.search()
 
         if btnName == "pb_select_batch":
             options = QFileDialog.Options()
@@ -293,6 +293,13 @@ class MainWindow(QMainWindow):
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
+    
+    def search(self):
+        idcard = self.ui.lineEdit.text()
+        self.search_thread = SearchWorker(idcard, self.ini_path, self.template_excel)
+        self.search_thread.search_result.connect(self.table_update)
+        self.search_thread.error_mess.connect(self.search_error)
+        self.search_thread.start()
 
     def update_le(self, user, origin, error):
         self.ui.pb_login_login.setEnabled(True)
@@ -309,6 +316,12 @@ class MainWindow(QMainWindow):
         print(result)
         self.ui.pb_vpn_login.setEnabled(True)
     
+    def search_error(self, str):
+        messbox = QMessageBox()
+        messbox.setWindowTitle("查询错误")
+        messbox.setText(str)
+        messbox.exec()
+    
     def table_update(self, dic):
         table_dic = {
             "ryjb_info": self.ui.tableWidget,
@@ -324,17 +337,18 @@ class MainWindow(QMainWindow):
                     table.setItem(row, col, QTableWidgetItem(""))
             lis = dic.get(key)
             # print(lis)
-            for r, d in enumerate(lis):
-                header = table.horizontalHeader()
-                headers = [header.model().headerData(i, Qt.Horizontal) for i in range(table.columnCount())]
-                # print(f'{key}--{headers}')
-                for i, h in enumerate(headers):
-                    text = d.get(h) if d.get(h) else ""
-                    # print(f'{text}--{type(text)}')
-                    text_item = QTableWidgetItem(str(text))
-                    text_item.setTextAlignment(Qt.AlignCenter)
-                    table.setItem(r, i, text_item)
-            table.resizeColumnsToContents()
+            if lis:
+                for r, d in enumerate(lis):
+                    header = table.horizontalHeader()
+                    headers = [header.model().headerData(i, Qt.Horizontal) for i in range(table.columnCount())]
+                    # print(f'{key}--{headers}')
+                    for i, h in enumerate(headers):
+                        text = d.get(h) if d.get(h) else ""
+                        # print(f'{text}--{type(text)}')
+                        text_item = QTableWidgetItem(str(text))
+                        text_item.setTextAlignment(Qt.AlignCenter)
+                        table.setItem(r, i, text_item)
+                table.resizeColumnsToContents()
             # column_count = self.ui.tableWidget.columnCount()
             # widths = []
             # for i in range(column_count):
@@ -344,7 +358,7 @@ class MainWindow(QMainWindow):
 
     def set_info(self, num):
         self.ui.tb_batch.setTextColor("black")
-        self.ui.tb_batch.append(f'读取有效数据：{num}')
+        self.ui.tb_batch.append(f'            读取有效数据：{num}')
     
     def run_result(self, num):
         self.ui.progressBar.setValue(num)

@@ -7,11 +7,9 @@ businessID: 23123232
 """
 from openpyxl import load_workbook
 from . Base_Class import Base_Class, AuthError
-from datetime import datetime
-from tqdm import tqdm
-from icecream import ic
 from . Reset_width import Reset
-import requests, os, time, asyncio
+from datetime import datetime
+import os, time, asyncio
 
 
 class RL(Base_Class):

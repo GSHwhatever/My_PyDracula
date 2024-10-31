@@ -1,7 +1,8 @@
 from PySide6.QtCore import QObject, QThread, Signal
 from concurrent.futures import ThreadPoolExecutor as Pool
 from myfunction import *
-import subprocess, time
+from datetime import datetime
+import subprocess, time, re
 
 
 class LoginWorker(QThread):
@@ -27,6 +28,7 @@ class LoginWorker(QThread):
 class SearchWorker(QThread):
 
     search_result = Signal(dict)
+    error_mess = Signal(str)
 
     def __init__(self, idcard, ini_path, template_excel) -> None:
         super().__init__()
@@ -34,12 +36,50 @@ class SearchWorker(QThread):
         self.ini_path = ini_path
         self.template_excel = template_excel
 
+    def check_id_card(self, id_card):
+        # 检查长度
+        if len(id_card) not in [15, 18]:
+            return False
+
+        # 正则表达式检查格式
+        if len(id_card) == 18:
+            if not re.match(r'^\d{17}(\d|X)$', id_card):
+                return False
+        else:  # 15位
+            if not re.match(r'^\d{15}$', id_card):
+                return False
+
+        # 出生日期检查
+        if len(id_card) == 18:
+            birth_date = id_card[6:14]
+        else:
+            # 15位身份证年份需要加上 19 前缀
+            birth_date = '19' + id_card[6:12]
+
+        try:
+            datetime.strptime(birth_date, '%Y%m%d')
+        except ValueError:
+            return False
+
+        # 校验位计算（只对18位有效）
+        if len(id_card) == 18:
+            weight = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2]
+            check_digits = '10X98765432'
+            total = sum(int(id_card[i]) * weight[i] for i in range(17))
+            if id_card[17] != check_digits[total % 11]:
+                return False
+
+        return True
+
     def run(self):
         # 金保个人信息查询，返回具体数据
-        cb = JC_Query(self.ini_path, self.template_excel)
-        dic = cb.search(self.idcard)
-        data = dic.get(self.idcard)
-        self.search_result.emit(data)
+        if self.check_id_card(self.idcard):
+            cb = JC_Query(self.ini_path, self.template_excel)
+            dic = cb.search(self.idcard)
+            data = dic.get(self.idcard)
+            self.search_result.emit(data)
+        else:
+            self.error_mess.emit(f'身份证号:\n{self.idcard}\n不合法,请检查后重试')
 
 class VPNWorker(QThread):
     

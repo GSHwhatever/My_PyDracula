@@ -136,7 +136,7 @@ class JC_Query(Base_Class):
             # ic(lis, sort_dicts=False)
             if not lis:
                 lis = [{"序号": 1, "社会保障号": payload.get('aac147'), "姓名": payload.get('aac003'), "性别": '', "证件类型": '', "证件号码": payload.get('aac002')}]
-            self.result_dic.get(payload.get('aac002')).update({"jydj_info": lis})
+            self.result_dic.get(payload.get('aac002'), {}).update({"jydj_info": lis})
         else:
             raise AuthError(message=res.get('msg'), code=status)
 
@@ -178,7 +178,7 @@ class JC_Query(Base_Class):
             # ic(lis, sort_dicts=False)
             if not lis:
                 lis = [{"序号": 1, "失业登记日期": '', "社会保障号码": payload.get('aac147'), "姓名": payload.get('aac003'),}]
-            self.result_dic.get(payload.get('aac002')).update({"sydj_info": lis})
+            self.result_dic.get(payload.get('aac002'), {}).update({"sydj_info": lis})
         else:
             raise AuthError(message=res.get('msg'), code=status)
 
@@ -220,7 +220,7 @@ class JC_Query(Base_Class):
             # ic(lis, sort_dicts=False)
             if not lis:
                 lis = [{"序号": 1, "身份证号": payload.get('aac002'), "姓名": payload.get('aac003'), "性别": "", "证件申请类型": "", "就业创业证号码": "无"}]
-            self.result_dic.get(payload.get('aac002')).update({"jycyz_info": lis})
+            self.result_dic.get(payload.get('aac002'), {}).update({"jycyz_info": lis})
         else:
             raise AuthError(message=res.get('msg'), code=status)
 
@@ -264,7 +264,7 @@ class JC_Query(Base_Class):
                 # ic(lis, sort_dicts=False)
                 if not lis:
                     lis = [{"序号": 1, "社会保障号": payload.get('aac147'), "姓名": payload.get('aac003'), "证件号码": payload.get('aac002'), "性别": "", "出生日期": "", "住址": "","联系电话": "", "人员类别": "", "有效标记":"否"}]
-                self.result_dic.get(payload.get('aac002')).update({"knrd_info": lis})
+                self.result_dic.get(payload.get('aac002'), {}).update({"knrd_info": lis})
         else:
             raise AuthError(message=res.get('msg'), code=status)
 
@@ -324,7 +324,7 @@ class JC_Query(Base_Class):
                 if not lis:
                     lis = [{"序号": 1, "姓名": payload.get('aac003'), "证件号码": payload.get('aac002'), "性别": "", "职业工种名称": "", "职业方向": "", "技能等级": "",
                             "理论知识考试成绩": "","技能考核成绩": "","评定成绩": "","文化程度": "","证书编号": "","发证日期": "","职业技能鉴定机构": "","发证机关": "","数据责任单位": "","等级": "无"}]
-                self.result_dic.get(payload.get('aac002')).update({"zgzs_info": lis})
+                self.result_dic.get(payload.get('aac002'), {}).update({"zgzs_info": lis})
         else:
             raise AuthError(message=res.get('msg'), code=status)
 
