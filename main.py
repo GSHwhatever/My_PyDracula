@@ -88,13 +88,14 @@ class MainWindow(QMainWindow):
         widgets.pb_login_login.clicked.connect(self.buttonClick)
         widgets.pb_rc_login.clicked.connect(self.buttonClick)
         widgets.pb_vpn_login.clicked.connect(self.buttonClick)
-        # search_page
+        # search_page   
         widgets.pushButton.clicked.connect(self.buttonClick)
         # batch_page
         widgets.pb_select_batch.clicked.connect(self.buttonClick)
         widgets.pb_run_batch.clicked.connect(self.buttonClick)
         # set_page
         widgets.pb_submit_set.clicked.connect(self.buttonClick)
+        widgets.pb_submit_set2.clicked.connect(self.buttonClick)
         widgets.pb_choose_set.clicked.connect(self.buttonClick)
         widgets.pb_choose_set_2.clicked.connect(self.buttonClick)
         widgets.pb_edit_set.clicked.connect(self.buttonClick)
